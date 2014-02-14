@@ -15,6 +15,11 @@ class App_controller extends Controller{
     $f3->set('ardt',$this->model->getImage(array('ardtId'=>$f3->get('PARAMS.ardtId'))));
     $this->tpl['async']='json/ardt.json';
   }
+
+  public function getPollution($f3){
+    $f3->set('pol',$this->model->getPollution(array('polId'=>$f3->get('PARAMS.polId'))));
+    $this->tpl['async']='json/pol.json';
+  }
  
 }
 

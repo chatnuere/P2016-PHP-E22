@@ -15,6 +15,10 @@ private $mapper;
   public function getImage($params){
     return $this->mapper->load(array('arrondissement=?',$params['ardtId']));
   }
+
+  public function getPollution($params){
+    return $this->mapper->load(array('pollution=?',$params['polId']));
+  }
   
 } 
   

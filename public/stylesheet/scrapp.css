@@ -8,7 +8,7 @@ ul {list-style:none;padding:0;}
 
 .index{text-align:center;}
 .index li{margin:1em;}
-.index a{display:inline-block;background-color:#fff;color:#D1D1D1;border:1px solid #D1D1D1;padding:.5em;border-radius:.3em;}
+.index a, .index-pol a{display:inline-block;background-color:#fff;color:#D1D1D1;border:1px solid #D1D1D1;padding:.5em;border-radius:.3em;}
 .index li:hover a, .index a.on{background-color:#B7B7B7;color:#fff;}
 .index li:first-child:hover a, .index li:first-child a.on{background-color:#D4C255;color:#fff;border-color:#D4C255;}
 
