@@ -1,4 +1,4 @@
-$('.index a').on('click',function(e){
+$('.index a, .index-pol a').on('click',function(e){
 	e.preventDefault();
 	$('input[name="name"]').focus();
 	var $this=$(this);

@@ -1,0 +1,5 @@
+{
+"latitude":"<?php echo $pol->latitude; ?>",
+"longitude":"<?php echo $pol->longitude; ?>",
+"chemin":"<?php echo $pol->chemin; ?>"
+}
