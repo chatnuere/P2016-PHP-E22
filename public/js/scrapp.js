@@ -11,10 +11,8 @@ $('.index a').on('click',function(e){
 			url:$this.attr('href')
 		})
 		.success(function(data){
-			$('section + section').html(data);
-			$('.users').html(data);
-			$('.index a.on').removeClass('on');
-			$this.addClass('on');
+			$('h1').html(data.latitude);
+			$('h2').html(data.longitude);
 		});
 	}
 
