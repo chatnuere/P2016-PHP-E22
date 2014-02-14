@@ -12,8 +12,7 @@ class App_controller extends Controller{
     
   public function getImage($f3){
     $f3->set('ardt',$this->model->getImage(array('ardtId'=>$f3->get('PARAMS.ardtId'))));
-    $valeurs($f3->get('ardt'));
-    json_encode($ardt);
+    var_dump($f3->get('ardt'));
     $this->tpl['async']='partials/image.html';
   }
  
