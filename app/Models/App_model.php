@@ -13,7 +13,7 @@ private $mapper;
  }
 
   public function getImage($params){
-    return $this->mapper->load(array('arrondissement=?',$params['ardtId']));
+    return $this->mapper->find(array('arrondissement=?',$params['ardtId']));
   }
 
   public function getPollution($params){

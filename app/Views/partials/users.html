@@ -1,10 +1,11 @@
 <?php 
-if(isset($users)):
-foreach($users as $user):
- ?>
-<li><a href="user/<?php echo $user->userId; ?>"><?php echo $user->firstname.' '.$user->lastname; ?></a>
-  <a href="favorite/<?php echo $user->id ?>" class="fav"><i class="icon-star"></i></a>
-  </li>
+if(isset($ardt)):
+foreach($ardt as $element):
+?>
+<li>
+	<h1><?php echo $element->latitude.' '.$element->longitude; ?></h1>
+	<h2><?php echo $element->arrondissement; ?></h2>
+</li>
 <?php
 endforeach;
 endif;

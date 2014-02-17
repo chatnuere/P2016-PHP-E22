@@ -11,8 +11,10 @@ $('.index a, .index-pol a').on('click',function(e){
 			url:$this.attr('href')
 		})
 		.success(function(data){
-			$('h1').html(data.latitude);
-			$('h2').html(data.longitude);
+			$('section + section').html(data);
+			$('.users').html(data);
+			$('.index a.on').removeClass('on');
+			$this.addClass('on');
 		});
 	}
 

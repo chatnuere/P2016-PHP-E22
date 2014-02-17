@@ -13,7 +13,7 @@ class App_controller extends Controller{
     
   public function getImage($f3){
     $f3->set('ardt',$this->model->getImage(array('ardtId'=>$f3->get('PARAMS.ardtId'))));
-    $this->tpl['async']='json/ardt.json';
+    $this->tpl['async']='partials/users.html';
   }
 
   public function getPollution($f3){
