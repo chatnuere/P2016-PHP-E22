@@ -15,6 +15,7 @@ $('.index a, .index-pol a').on('click',function(e){
 			$('.users').html(data);
 			$('.index a.on').removeClass('on');
 			$this.addClass('on');
+			console.log(data);
 		});
 	}
 
