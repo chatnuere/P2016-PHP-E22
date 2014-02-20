@@ -23,19 +23,24 @@ class App_controller extends Controller{
             'password'=>$f3->get('POST.password')
           ));
           if(!$auth){
-            $f3->set('error',$f3->get('loginError'));
+            $f3->set('error','Oops');
             $this->tpl['sync']='signin.html';
           }else{
             $user=array(
-              'id'=>$auth->id,
-              'firstname'=>$auth->firstname,
-              'lastname'=>$auth->lastname
+              'id'=>$auth->id_user,
+              'pseudo'=>$auth->pseudo
             );
             $f3->set('SESSION',$user);
             $f3->reroute('/');
           }
         break;
       }
+  }
+
+
+  public function signout($f3){
+    session_destroy();
+    $f3->reroute('/signin');
   }
 
 
@@ -49,6 +54,10 @@ class App_controller extends Controller{
     $this->tpl['async']='partials/pol.html';
   }
  
+
+  public function getPhotoUser($f3){
+    
+  }
 }
 
 ?>
