@@ -17,7 +17,7 @@ private $mapper;
   }
 
   public function getPollution($params){
-    return $this->mapper->load(array('pollution=?',$params['polId']));
+    return $this->mapper->find(array('pollution=?',$params['polId']));
   }
   
 } 
