@@ -11,6 +11,34 @@ class App_controller extends Controller{
     
   }
     
+
+  public function signin($f3){
+      switch($f3->get('VERB')){
+        case 'GET':
+          $this->tpl['sync']='signin.html';
+        break;
+        case 'POST':
+          $auth=$this->model->signin(array(
+            'login'=>$f3->get('POST.login'),
+            'password'=>$f3->get('POST.password')
+          ));
+          if(!$auth){
+            $f3->set('error',$f3->get('loginError'));
+            $this->tpl['sync']='signin.html';
+          }else{
+            $user=array(
+              'id'=>$auth->id,
+              'firstname'=>$auth->firstname,
+              'lastname'=>$auth->lastname
+            );
+            $f3->set('SESSION',$user);
+            $f3->reroute('/');
+          }
+        break;
+      }
+  }
+
+
   public function getImage($f3){
     $f3->set('ardt',$this->model->getImage(array('ardtId'=>$f3->get('PARAMS.ardtId'))));
     $this->tpl['async']='partials/ardt.html';

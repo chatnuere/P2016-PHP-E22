@@ -20,6 +20,10 @@ private $mapper;
     return $this->mapper->find(array('pollution=?',$params['polId']));
   }
   
+  function signin($params){
+  	return $this->mapper->load(array('userId=?',$params['login']));
+ }
+ 
 } 
   
 ?>
