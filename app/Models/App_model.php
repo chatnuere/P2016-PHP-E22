@@ -21,8 +21,8 @@ private $mapper;
   }
   
 
-  public function getPhotoUser($f3){
-    
+  public function getPhotoUser($params){
+     return $this->mapper->find(array('id_user=?',$params['userId']));
   }
 
 

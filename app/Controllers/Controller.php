@@ -7,6 +7,8 @@ protected $model;
   protected function __construct(){
     $modelName=substr(get_class($this),0,strpos(get_class($this),'_')+1).'model';
     $f3=\Base::instance();
+    session_start();
+    /*$f3->get('SESSION.id');*/
     /*if($f3->get('PATTERN')!='/signin'&&!$f3->get('SESSION.id')){
       $f3->reroute('/signin');
     }*/

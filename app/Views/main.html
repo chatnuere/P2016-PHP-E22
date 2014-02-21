@@ -59,21 +59,23 @@
     <li><a href="pol/5" data-filter="5">Niveau 5</a></li>
   </ul>  
 
-  </section>
-  <section>
-
-  <?php if (isset($SESSION)): ?>
+  <?php if (isset($SESSION["id"])): ?>
     <div>
       Hello <?php echo $SESSION['pseudo']; ?>
       <a href="signout"><i class="icon-signout"></i></a>
+      <h2 class="userPhoto"><a href="photos/<?php echo $SESSION['id']; ?>">Mes photos</a></h2> 
     </div>
   <?php endif; ?>
 
-  <?php if (!isset($SESSION)): ?>
+  <?php if (!isset($SESSION["id"])): ?>
     <div>
       <h2><a href="signin">Connexion</a></h2>
     </div>
   <?php endif; ?>
+
+  </section>
+  <section>
+
 
   </section>
   
