@@ -20,10 +20,16 @@ private $mapper;
     return $this->mapper->find(array('pollution=?',$params['polId']));
   }
   
+
+  public function getPhotoUser($f3){
+    
+  }
+
+
   function signin($params){
-  	return $this->mapper->load(array('userId=?',$params['login']));
+  	return $this->getMapper('user')->load(array('pseudo=?',$params['login']));
  }
- 
+
 } 
   
 ?>
