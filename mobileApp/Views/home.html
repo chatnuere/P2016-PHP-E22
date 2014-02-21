@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
-
+        <base href="<?php echo $BASE; ?>/">
         <link rel="stylesheet" type="text/css" href="public/mobile/stylesheet/style.css" />
         <link rel="stylesheet" type="text/css" href="public/mobile/stylesheet/fonts.css" />
         
@@ -17,11 +17,13 @@
  </div>
 
 <h2>Connexion</h2>
+<?php if(isset($error)): ?>
+  <div class="error"><?php echo $error ?></div>
+<?php endif; ?>
 <div>
   <form autocomplete="off" method="post" action="mobile/">
-      <input type="text" id="full_name" name="full_name" placeholder="Nom d'utilisateur" value="<?php if (isset($_POST['unsername'])) echo htmlentities(trim($_POST['login'])); ?>"required />
-      <input type="password" id="password" name="pass" placeholder="Mot de passe" value="<?php if (isset($_POST['password'])) echo htmlentities(trim($_POST['pass'])); ?>"required />
-      <label for="pass"></label>
+      <input type="text" name="username" placeholder="Nom d'utilisateur" value="<?php if(isset($POST['username'])):  echo $POST['username']; endif; ?>" required />
+      <input type="password" name="password" placeholder="Mot de passe" required />
       <input type="submit" value="Login" />
 </form>
 
