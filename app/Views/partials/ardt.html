@@ -5,6 +5,7 @@ $e[] = array(
     "longitude" => $element->longitude,
     "latitude" => $element->latitude,
     "chemin" => $element->chemin,
+    "pollution" => $element->pollution,
 );
 endforeach;
  $testjson  = json_encode($e);
@@ -18,20 +19,48 @@ var lenghtJson = testJson.length;
 var map = L.mapbox.map('map', 'examples.map-9ijuk24y');
 
 var geoJson = [];
-
+var polutionColor = "#3E47D0";
 
 
 for(var i = 0 ; i<lenghtJson; i++){
-geoJson.push({
+console.log(testJson[i].pollution);
+switch (testJson[i].pollution){
 
-	type: 'Feature',
-    "geometry": { "type": "Point", "coordinates": [parseFloat(testJson[i].longitude), parseFloat(testJson[i].latitude)]},
-    "properties": {
-        "image": testJson[i].chemin,
-        "url": testJson[i].chemin,
-        "city": testJson[i].longitude+" "+testJson[i].latitude}
-        }
-        )
+	case 1:
+	polutionColor = "#3E47D0";
+	break;
+	
+	case 2:
+	polutionColor = "#5DCF5E";
+	break;
+
+
+	case 3:
+	polutionColor = "#FFEA2C";
+	break;
+
+
+	case 4:
+	polutionColor = "#D08000";
+	break;
+
+	case 5:
+	polutionColor = "#CF3A3A";
+	break;
+
+}
+
+geoJson.push({
+type: 'Feature',
+		"geometry": { "type": "Point", "coordinates": [parseFloat(testJson[i].longitude), parseFloat(testJson[i].latitude)]},
+		"properties": {
+			"marker-color": polutionColor,
+			"marker-symbol": "waste-basket",
+			"image": testJson[i].chemin,
+			"url": testJson[i].chemin,
+			"city": testJson[i].longitude+" "+testJson[i].latitude
+		}
+        })
 }
 // Add custom popups to each using our custom feature properties
 map.markerLayer.on('layeradd', function(e) {
