@@ -56,7 +56,8 @@ class App_controller extends Controller{
  
 
   public function getPhotoUser($f3){
-    
+    $f3->set('pol',$this->model->getPollution(array('polId'=>$f3->get('PARAMS.polId'))));
+    $this->tpl['async']='partials/userPhoto.html';
   }
 }
 
