@@ -15,46 +15,37 @@ endforeach;
 	<script>
 var testJson = jQuery.parseJSON( '<?php echo $testjson; ?>' );
 var lenghtJson = testJson.length;
-var map = L.mapbox.map('map', 'examples.map-9ijuk24y');
+var map = L.mapbox.map('map', 'examples.map-9ijuk24y')
+map.setView([48.855, 2.352], 13);
 
-var geoJson = [];
-
+var addressPoints = [
+];
 
 
 for(var i = 0 ; i<lenghtJson; i++){
-geoJson.push({
-
-	type: 'Feature',
-    "geometry": { "type": "Point", "coordinates": [parseFloat(testJson[i].longitude), parseFloat(testJson[i].latitude)]},
-    "properties": {
-        "image": testJson[i].chemin,
-        "url": testJson[i].chemin,
-        "city": testJson[i].longitude+" "+testJson[i].latitude}
-        }
-        )
+	addressPoints.push([parseFloat(testJson[i].latitude), parseFloat(testJson[i].longitude), '<img src="' + testJson[i].chemin + '"width="280px">'])
 }
-// Add custom popups to each using our custom feature properties
-map.markerLayer.on('layeradd', function(e) {
-    var marker = e.layer,
-        feature = marker.feature;
+ var markers = new L.MarkerClusterGroup();
 
-    // Create custom popup content
-    var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.url + '">' +
-                            '<img src="' + feature.properties.image + '">' +
-                        '   <h2>' + feature.properties.city + '</h2>' +
+    for (var i = 0; i < addressPoints.length; i++) {
+        var a = addressPoints[i];
+                var title = '<a target="_blank" class="popup" href="' + testJson[i].chemin + '">' +
+                            '<img src="' + testJson[i].chemin + '">' +
+                        '   <h2>' + testJson[i].longitude + '</h2>' +
                         '</a>';
-
-    // http://leafletjs.com/reference.html#popup
-    marker.bindPopup(popupContent,{
+        var marker = L.marker(new L.LatLng(a[0], a[1]), {
+            icon: L.mapbox.marker.icon({'marker-symbol': 'waste-basket', 'marker-color': 'CF3A3A'}),
+            title: title
+        });
+        marker.bindPopup(title,{
         closeButton: false,
         minWidth: 320
     });
-});
+        markers.addLayer(marker);
+    }
 
-// Add features to the map
-map.markerLayer.setGeoJSON(geoJson);
+    map.addLayer(markers);
 
-map.setView([48.855, 2.352], 13);
 
 </script>
 

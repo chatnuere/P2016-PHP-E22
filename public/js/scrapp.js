@@ -1,6 +1,5 @@
-$('.index a, .index-pol a, .userPhoto').on('click',function(e){
+$('.index a, .index-pol a').on('click',function(e){
 	e.preventDefault();
-	$('input[name="name"]').focus();
 	var $this=$(this);
 	if($this.hasClass('on')){
 		$('.users').html('');
@@ -22,6 +21,24 @@ $('.index a, .index-pol a, .userPhoto').on('click',function(e){
 	$('input[name="name"]').val('');
 });
 
+$('.userPhoto a').on('click',function(e){
+	e.preventDefault();
+	var $this=$(this);
+	if($this.hasClass('on')){
+		$('.users').html('');
+		$this.removeClass('on');	
+	}else{
+		$.ajax({
+			url:$this.attr('href')
+		})
+		.success(function(data){
+			$('section + section').html(data);
+			$('.userPhoto a.on').removeClass('on');
+			$this.addClass('on');
+			console.log(data);
+		});
+	}
+});
 
 
 

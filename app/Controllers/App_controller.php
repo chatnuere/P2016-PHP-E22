@@ -23,7 +23,7 @@ class App_controller extends Controller{
             'password'=>$f3->get('POST.password')
           ));
           if(!$auth){
-            $f3->set('error','Oops');
+            $f3->set('error','Oops, an error occured ! Try again.');
             $this->tpl['sync']='signin.html';
           }else{
             $user=array(
