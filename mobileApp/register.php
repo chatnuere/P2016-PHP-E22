@@ -41,7 +41,7 @@
 			{
 				if($_POST['password'] === $_POST['password-check'])
 				{//Hachage du mot de passe _ marche pô!!!
-					//$pass_hache = sha1($_POST['password']);
+					//$pass_hache = md5($_POST['password']);
 					//si les conditions sont remplies on dirige l'utilisateur directement sur la page d'upload/photo/géoloc
 					header("Location: upload/upload.html");
 				//connection à la BDD et insertion des données
