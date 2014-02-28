@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Scrapp</title>
+	<meta name="description" content="">
+  <base href="<?php echo $BASE; ?>/" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="public/fonts/fonts.css" rel="stylesheet" type="text/css"  />
+  <link href="public/stylesheet/scrapp.css" rel="stylesheet" type="text/css" /> 
+  <!--<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>-->
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+
+<!--   pour les marqueurs de pollution   -->
+  <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+  <link href='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+  <link href='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+  </head>
+
+<body>
+<header>
+  <h1><img src="public/images/logo.png" alt="Logo scrapp"></h1>
+    
+    <nav>
+      <ul class="main_menu">
+         <li><a href="#carte">Carte</a></li>
+         <li><a href="#contrib">Dernières contributions</a></li>
+         <li><a href="#concept">Concept</a></li>
+         <li><a href="#apropos">A propos</a></li>
+         <li><div class="fleche fleche-droite"><a href="">Connexion</a></div></li>
+      </ul>
+    </nav>
+
+</header>
+
+<!-- Section vidéo -->
+<section class="intro">
+<video src="public/video/thriller.mp4" controls width :"552px"></video>
+</section>
+
+
+<!-- Section map de localisation des déchets -->
+<section>
+<h2>Localisation des déchets</h2>
+<div class="roundedimage"></div><!--points sous le h2-->
+</section>
+
+      <!-- Section map -->
+<section id="carte">
+      
+       <!-- Emplacement de la map de Paris  -->
+  <div class="map"></div>
+
+       <!-- Liste sous la map avec l'évolution du traitement des déchets  -->
+    <ul class="tache">
+      <li><figure><a href="" class="encours"><img src="public/images/encours.png"><figcaption>en cours de traitement</figcaption></a></figure></li>
+      <li><figure><a href="" class="encours"><img src="public/images/traite.png"><figcaption>déjà traité</figcaption></a></figure></li>
+      <li><figure><a href="" class="encours"><img src="public/images/examen.png"><figcaption>en cours d'examen</figcaption></a></figure></li>
+    </ul>  
+
+
+<!-- Section dernières contributions -->
+<section class="contrib">
+<h2>Dernières contributions</h2>
+<div class="roundedimage"></div><!--points sous le h2-->
+
+      <!--Liste des dernières contributions-->
+<ul class="contribution">
+<li><figure>
+  <img src="public/images/pic1.jpg">
+    <figcaption >
+      <ul>
+        <li> <img src="public/images/date.png">25 février 2014</li>
+        <li> <img src="public/images/adresse.png">20 rue du Colonel Driant, 75003</li>
+        <li> <img src="public/images/encours.png">En cours de traitement</li>
+      </ul>
+    </figcaption></figure>
+</li>
+
+<li><figure>
+  <img src="public/images/pic2.jpg">
+     <figcaption>
+      <ul>
+        <li> <img src="public/images/date.png">20 février 2014</li>
+        <li> <img src="public/images/adresse.png">31 place Vendôme, 75001</li>
+        <li> <img src="public/images/traite.png">Nettoyage effectué</li>
+      </ul>
+    </figcaption></figure>
+</li>
+
+<li><figure>
+  <img src="public/images/pic3.jpg">
+    <figcaption>
+      <ul>
+        <li> <img src="public/images/date.png">19 février 2014</li>
+        <li> <img src="public/images/adresse.png">207 rue la Fayette, 75010</li>
+        <li> <img src="public/images/examen.png">En cours de nettoyage</li>
+      </ul>
+    </figcaption></figure>
+</li>
+</ul>
+
+</section>
+
+
+<!-- Section notre service -->
+<section id="concept">
+<h2 class="service">Notre service</h2>
+<div class="roundedimage_bl"></div><!--points blancs sous le h2-->
+    
+     <!-- Liste des explications -->
+
+<ul class="service_pres">
+  <li><img src="public/images/exp_1.png"><figcaption>Chassez les ordures proches de chez vous</figcaption></li>
+  <li><img src="public/images/exp_2.png"><figcaption>Chassez les ordures proches de chez vous</figcaption></li>
+  <li><img src="public/images/exp_3.png"><figcaption>Chassez les ordures proches de chez vous</figcaption></li>
+  <li><img src="public/images/exp_4.png"><figcaption>Chassez les ordures proches de chez vous</figcaption></li>
+</ul>
+
+<p>Un petit ruisseau, du nom de Larousse, coule en leur lieu et les approvisionne en règlalades nécessaires
+en tout genre; un pays paradisiagmatique, dans lequel des pans entiers de phrases prémâchées vous volent
+litéralement tout cuit dans la bouche. </p>
+
+
+
+</section>
+
+
+
+  <!--<?php if (isset($SESSION["id"])): ?>
+    <div>
+       <?php echo $SESSION['pseudo']; ?>
+      <a href="signout"><i class="icon-signout"></i></a>
+      <h2 class="userPhoto"><a href="photos/<?php echo $SESSION['id']; ?>">Mes photos</a></h2> 
+    </div>
+  <?php endif; ?>
+
+  <?php if (!isset($SESSION["id"])): ?>
+    <div>
+      <h2><a href="signin">Connexion</a></h2>
+    </div>
+  <?php endif; ?> -->
+
+  </section>
+
+  
+<!--	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="public/js/scrapp.js"></script> -->
+
+<!-- script smoothscroll -->
+<script src="public/js/smooth-scroll.js"></script>
+</body>
+</html>
