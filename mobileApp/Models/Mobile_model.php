@@ -17,7 +17,7 @@ private $mapper;
  // public function submit($params){
  // $db->exec('INSERT INTO users VALUES (:id, :username, :password, :email)',array(':username' => $_POST['username'],':password' => $_POST['password'],':email' => $_POST['email']))
  
- 
+
   
   
 }

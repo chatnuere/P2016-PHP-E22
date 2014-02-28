@@ -69,6 +69,8 @@ class Mobile_controller extends Controller{
     
   }
   
+//3.Fonction upload de photo
+
 
   
 }
