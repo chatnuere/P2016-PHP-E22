@@ -8,7 +8,32 @@ class App_controller extends Controller{
   }
   
   public function home($f3){
-    
+  $f3->set('allpoints', $this->model->mapHome());
+  
+$tabPrincipal = array();
+        $elements = $f3->get('allpoints');
+        for($i=0; $i<sizeof($elements); $i++){
+          $tabPrincipal[$i] = array(
+            "longitude" => $elements[$i]["longitude"],
+            "latitude" => $elements[$i]["latitude"],
+            "chemin" => $elements[$i]["chemin"],
+             "pollution" => $elements[$i]["pollution"],
+             "time" => $elements[$i]["time"],
+             "statut" => $elements[$i]["statut"]
+       );
+        }
+        $f3->set('tabPerso', $tabPrincipal);
+
+   /* foreach ($f3->get('allpoints') as $point) {
+       $e[] = array(
+    "longitude" => $point["longitude"],
+    "latitude" => $point["latitude"],
+    "chemin" => $point["chemin"],
+     "pollution" => $point["pollution"],
+     "statut" => $point["statut"],
+);
+        }
+        $pointsJson  = json_encode($e);*/
   }
     
 

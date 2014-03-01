@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+	<title>Scrapp</title>
+	<meta name="description" content="">
+  <base href="<?php echo $BASE; ?>/" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Arapey" rel="stylesheet" type="text/css" />
+  <link href="public/stylesheet/style.css" rel="stylesheet" type="text/css" />
+  <link href="public/stylesheet/mfglabs_iconset.css" rel="stylesheet"  type="text/css" />
+  <link href="public/stylesheet/scrapp.css" rel="stylesheet" type="text/css" />
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+
+
+<!--   pour les marqueurs de pollution   -->
+<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+<link href='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+<link href='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+  
+</head>
+<body>
+  <header>
+    
+    
+    <a href="">Scrapp</a>
+    <!--<form action="users/search/" method="post">
+      <input type="text" name="name" placeholder="Recherche" autocomplete="off"/>
+    </form>-->
+  </header>
+  <section>
+  
+  <ul class="index">
+    <!--<li><a href="filter/favorite" data-filter="favorite"><i class="icon-star"></i></a></li>-->
+    <li><a href="ardt/1" data-filter="1">I<sup>er</sup> arrondissement</a></li>
+    <li><a href="ardt/2" data-filter="2">II<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/3" data-filter="3">III<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/4" data-filter="4">IV<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/5" data-filter="5">V<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/6" data-filter="6">VI<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/7" data-filter="7">VII<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/8" data-filter="8">VIII<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/9" data-filter="9">IX<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/10" data-filter="10">X<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/11" data-filter="11">XI<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/12" data-filter="12">XII<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/13" data-filter="13">XIII<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/14" data-filter="14">XIV<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/15" data-filter="15">XV<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/16" data-filter="16">XVI<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/17" data-filter="17">XVII<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/18" data-filter="18">XVIII<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/19" data-filter="19">XIX<sup>e</sup> arrondissement</a></li>
+    <li><a href="ardt/20" data-filter="20">XX<sup>e</sup> arrondissement</a></li>
+  </ul> 
+
+  <ul class="index-pol">
+    <li><a href="pol/1" data-filter="1">Niveau 1</a></li>
+    <li><a href="pol/2" data-filter="2">Niveau 2</a></li>
+    <li><a href="pol/3" data-filter="3">Niveau 3</a></li>
+    <li><a href="pol/4" data-filter="4">Niveau 4</a></li>
+    <li><a href="pol/5" data-filter="5">Niveau 5</a></li>
+  </ul>  
+
+  <?php if (isset($SESSION["id"])): ?>
+    <div>
+      Hello <?php echo $SESSION['pseudo']; ?>
+      <a href="signout"><i class="icon-signout"></i></a>
+      <h2 class="userPhoto"><a href="photos/<?php echo $SESSION['id']; ?>">Mes photos</a></h2> 
+    </div>
+  <?php endif; ?>
+
+  <?php if (!isset($SESSION["id"])): ?>
+    <div>
+      <h2><a href="signin">Connexion</a></h2>
+    </div>
+  <?php endif; ?>
+
+  </section>
+  <section>
+
+
+  </section>
+  
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="public/js/scrapp.js"></script>
+
+
+</body>
+</html>

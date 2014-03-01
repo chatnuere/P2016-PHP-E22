@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # http://code.google.com/p/sequel-pro/
 #
-# HÃ´te: 127.0.0.1 (MySQL 5.6.15-log)
-# Base de donnÃ©es: scrapp
-# Temps de gÃ©nÃ©ration: 2014-02-21 14:02:44 +0000
+# Hôte: 127.0.0.1 (MySQL 5.6.15-log)
+# Base de données: scrapp
+# Temps de génération: 2014-03-01 12:18:21 +0000
 # ************************************************************
 
 
@@ -203,6 +203,8 @@ CREATE TABLE `photo` (
   `arrondissement` int(11) DEFAULT NULL,
   `pollution` int(11) DEFAULT NULL,
   `id_user` int(11) NOT NULL,
+  `statut` int(11) DEFAULT NULL,
+  `time` timestamp NOT NULL,
   PRIMARY KEY (`id_photo`),
   KEY `id_user_idx` (`id_user`),
   CONSTRAINT `id_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE CASCADE
@@ -211,31 +213,31 @@ CREATE TABLE `photo` (
 LOCK TABLES `photo` WRITE;
 /*!40000 ALTER TABLE `photo` DISABLE KEYS */;
 
-INSERT INTO `photo` (`id_photo`, `chemin`, `longitude`, `latitude`, `arrondissement`, `pollution`, `id_user`)
+INSERT INTO `photo` (`id_photo`, `chemin`, `longitude`, `latitude`, `arrondissement`, `pollution`, `id_user`, `statut`, `time`)
 VALUES
-	(1,'http://www.hd-wallpaper.images-fonds.com/modules/mg3/albums/Art_Digital_Wallpaper_HD/3D_Landscape/3D_Landscape_wallpaper_HD_0006.jpg',2.352,48.855,3,5,1),
-	(2,'http://www.hd-wallpaper.images-fonds.com/modules/mg3/albums/Art_Digital_Wallpaper_HD/3D_Landscape/3D_Landscape_wallpaper_HD_0006.jpg',2.253,48.755,17,4,3),
-	(3,'http://gph.is/Nc6YQF',2.233,48.643,1,3,2),
-	(4,'http://gph.is/XK9yQO',2.333,48.822,2,2,1),
-	(5,'http://gph.is/17xENU',2.222,48.888,3,1,2),
-	(6,'http://gph.is/XL4dZt',2.333,48.777,4,5,3),
-	(7,'http://gph.is/XIp6Vb',2.321,48.765,5,4,1),
-	(8,'http://gph.is/1jjxRxn',2.123,48.567,6,3,2),
-	(9,'http://gph.is/XK4bkr',2.252,48.855,7,2,3),
-	(10,'http://gph.is/YZSgel',2.152,48.876,8,1,1),
-	(11,'http://gph.is/1abeVsD',2.234,48.834,9,5,2),
-	(12,'http://gph.is/XLJDIq',2.278,48.734,10,4,3),
-	(13,'http://gph.is/1blp2vS',2.369,48.817,11,3,1),
-	(14,'http://gph.is/17jmfSU',2.364,48.835,12,2,2),
-	(15,'http://gph.is/VxjsTw',2.348,48.799,13,1,3),
-	(16,'http://gph.is/17h3j8X',2.265,48.734,14,5,1),
-	(17,'http://gph.is/VwBJAi',2.333,48.888,15,4,2),
-	(18,'http://gph.is/XNeog6',2.354,48.834,16,3,3),
-	(19,'http://gph.is/XKwgrQ',2.362,48.812,17,2,1),
-	(20,'http://gph.is/VwBftX',2.326,48.888,18,1,3),
-	(21,'http://gph.is/13n5CVg',2.356,48.856,19,5,2),
-	(22,'http://gph.is/VwuQPl',2.341,48.822,20,4,1),
-	(23,'http://www.mon-diplome.fr/Diplome/700-245765-Dipl%C3%B4me%20du%20agrou-agrou%20niveau%2029.jpg',2.357,48.855,3,2,2);
+	(1,'http://www.hd-wallpaper.images-fonds.com/modules/mg3/albums/Art_Digital_Wallpaper_HD/3D_Landscape/3D_Landscape_wallpaper_HD_0006.jpg',2.352,48.855,3,5,1,0,'2014-01-24 12:00:00'),
+	(2,'http://media3.giphy.com/media/a1GsaiFIQdlS/giphy.gif',2.253,48.755,17,4,3,1,'0000-00-00 00:00:00'),
+	(3,'http://media.giphy.com/media/LCzu6leGqisYU/giphy.gif',2.233,48.643,1,3,2,2,'0000-00-00 00:00:00'),
+	(4,'http://media.giphy.com/media/L29fiOMSDhhvi/giphy.gif',2.333,48.822,2,2,1,0,'2013-12-23 15:00:00'),
+	(5,'http://media3.giphy.com/media/Ix9BzgfuZSlLG/giphy.gif',2.222,48.888,3,1,2,1,'0000-00-00 00:00:00'),
+	(6,'http://media3.giphy.com/media/QBtzAnMFO5i9O/giphy.gif',2.333,48.777,4,5,3,2,'0000-00-00 00:00:00'),
+	(7,'http://media0.giphy.com/media/CHc9dLQVQOAXm/giphy.gif',2.321,48.765,5,4,1,0,'2014-01-01 00:00:01'),
+	(8,'http://media.giphy.com/media/ODy29v7YAJrck/giphy.gif',2.123,48.567,6,3,2,1,'0000-00-00 00:00:00'),
+	(9,'http://media.giphy.com/media/knoyQk1X5Dfwc/giphy.gif',2.252,48.855,7,2,3,2,'0000-00-00 00:00:00'),
+	(10,'http://media.giphy.com/media/BFViVbnD8mlqM/giphy.gif',2.152,48.876,8,1,1,0,'0000-00-00 00:00:00'),
+	(11,'http://media.giphy.com/media/msiKDBvF2mOzK/giphy.gif',2.234,48.834,9,5,2,1,'0000-00-00 00:00:00'),
+	(12,'http://media.giphy.com/media/TanVv1ZFb8BCE/giphy.gif',2.278,48.734,10,4,3,2,'0000-00-00 00:00:00'),
+	(13,'http://media.giphy.com/media/zQ1XuapnXFmEM/giphy.gif',2.369,48.817,11,3,1,0,'0000-00-00 00:00:00'),
+	(14,'http://media.giphy.com/media/Z8RCE3DdWfxE4/giphy.gif',2.364,48.835,12,2,2,1,'0000-00-00 00:00:00'),
+	(15,'http://media0.giphy.com/media/sDolZxlEp3QVG/giphy.gif',2.348,48.799,13,1,3,2,'0000-00-00 00:00:00'),
+	(16,'http://media.giphy.com/media/rAhTwAuhuqCRy/giphy.gif',2.265,48.734,14,5,1,0,'0000-00-00 00:00:00'),
+	(17,'http://media.giphy.com/media/ZrYuMwm6wKOoo/giphy.gif',2.333,48.888,15,4,2,1,'0000-00-00 00:00:00'),
+	(18,'http://media1.giphy.com/media/ZDMr1eBWTJHKE/giphy.gif',2.354,48.834,16,3,3,2,'0000-00-00 00:00:00'),
+	(19,'http://media2.giphy.com/media/n2EMxTY9P3DJ6/giphy.gif',2.362,48.812,17,2,1,0,'0000-00-00 00:00:00'),
+	(20,'http://media0.giphy.com/media/yLgHIG7JJXyqk/giphy.gif',2.326,48.888,18,1,3,1,'0000-00-00 00:00:00'),
+	(21,'http://media1.giphy.com/media/zbzZ9gdmODQQM/giphy.gif',2.356,48.856,19,5,2,2,'0000-00-00 00:00:00'),
+	(22,'http://media3.giphy.com/media/b3rbghhoMrhII/giphy.gif',2.341,48.822,20,4,1,0,'0000-00-00 00:00:00'),
+	(23,'http://www.mon-diplome.fr/Diplome/700-245765-Dipl%C3%B4me%20du%20agrou-agrou%20niveau%2029.jpg',2.357,48.855,3,2,2,1,'0000-00-00 00:00:00');
 
 /*!40000 ALTER TABLE `photo` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -299,6 +301,23 @@ VALUES
 
 /*!40000 ALTER TABLE `rep_age` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+# Affichage de la table sessions
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `sessions`;
+
+CREATE TABLE `sessions` (
+  `session_id` varchar(40) NOT NULL DEFAULT '',
+  `data` text,
+  `csrf` text,
+  `ip` varchar(40) DEFAULT NULL,
+  `agent` varchar(255) DEFAULT NULL,
+  `stamp` int(11) DEFAULT NULL,
+  PRIMARY KEY (`session_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 
 # Affichage de la table user
