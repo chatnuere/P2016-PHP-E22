@@ -250,11 +250,6 @@ section.contrib ul:nth-child(3) figcaption {
     text-align: left;
 }
 
-.figuredechet {
-max-width: 294px;
-max-height: 235px;
-}
-
 /*---------4.SECTION NOTRE SERVICE------------*/
 section#concept:nth-child(4) {
     height: 799px;
