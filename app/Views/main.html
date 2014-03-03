@@ -37,7 +37,7 @@
 
 <!-- Section vidéo -->
 <section class="intro">
-<video src="public/video/thriller.mp4" controls width :"552px"></video>
+<video src="public/video/scrapp.mp4" controls width :"552px"></video>
 </section>
 
 
@@ -71,6 +71,9 @@
 
 <?php 
 for ($i = 0; $i < 3; $i++) {
+
+
+
 switch ($tabPerso[$i]["statut"]){
 
 	case 0:
@@ -87,7 +90,7 @@ switch ($tabPerso[$i]["statut"]){
 }
 
 echo('<li><figure >
-<img class="figuredechet" src="'.$tabPerso[$i]["chemin"].'">
+<img class="figuredechet" src="public/images/uploaded/'.$tabPerso[$i]["chemin"].'">
     <figcaption >
       <ul>
         <li> <img src="public/images/date.png">'.$tabPerso[$i]["time"].'</li>

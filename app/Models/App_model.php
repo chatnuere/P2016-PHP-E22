@@ -41,5 +41,12 @@ return $photo_mapper->find(array(),array('order'=>'id_photo DESC'));
 
 
 
+
+
+  public function getMyAccount($params){
+         $userInfos=$this->dB->exec('SELECT   * FROM     `photo` LEFT JOIN `user` ON `photo`.`user_id` = `user`.`id_user` LEFT JOIN `badges` ON `photo`.`user_id` = `badges`.`user_id` WHERE    `photo`.`user_id`= '.$params['userId'].' ORDER BY `id_photo` DESC ;');
+		 return $userInfos;
+  }
+
 } 
 ?>

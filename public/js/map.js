@@ -31,8 +31,8 @@ type: 'Feature',
 		"properties": {
 			"marker-color": polutionColor,
 			"marker-symbol": "waste-basket",
-			"image": pointsJson[i].chemin,
-			"url": pointsJson[i].chemin,
+			"image": "public/images/uploaded/"+pointsJson[i].chemin,
+			"url": "public/images/uploaded/"+pointsJson[i].chemin,
 			"city": pointsJson[i].longitude+" "+pointsJson[i].latitude
 		}
         })

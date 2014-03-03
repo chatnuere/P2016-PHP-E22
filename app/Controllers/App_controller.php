@@ -84,6 +84,35 @@ $tabPrincipal = array();
     $f3->set('userPhoto',$this->model->getPhotoUser(array('userId'=>$f3->get('PARAMS.userId'))));
     $this->tpl['async']='partials/userPhoto.html';
   }
+  
+    public function getMyAccount($f3){
+    $f3->set('account',$this->model->getMyAccount(array('userId'=>$f3->get('PARAMS.userId'))));
+    $this->tpl['sync']='account.html';
+    
+    $userInfo = array();
+        $elements = $f3->get('account');
+        for($i=0; $i<sizeof($elements); $i++){
+          $userInfo[$i] = array(
+            "pseudo" => $elements[$i]["pseudo"],
+             "mail" => $elements[$i]["mail"],
+             "adresse" => $elements[$i]["adresse"],
+             "tel" => $elements[$i]["tel"],
+             "anniversaire" => $elements[$i]["anniversaire"],
+             "date" => $elements[$i]["date"],
+             "nuage" => $elements[$i]["nuage"],
+             "coeur" => $elements[$i]["coeur"],
+             "goutte" => $elements[$i]["goutte"],
+             "souris" => $elements[$i]["souris"],
+             "check" => $elements[$i]["check"],
+             "fleur" => $elements[$i]["fleur"],
+             "chemin" => $elements[$i]["chemin"],
+             "time" => $elements[$i]["time"],
+              "statut" => $elements[$i]["statut"]
+       );
+        }
+
+        $f3->set('userInfo', $userInfo);
+  }
 }
 
 ?>

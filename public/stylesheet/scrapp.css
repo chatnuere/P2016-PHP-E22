@@ -294,9 +294,9 @@ p {
 
 
 /*=======================================================================================================
-            									@MEMBERPAGE
+                                                @MEMBERPAGE
 =========================================================================================================*/
-
+ 
 /*--------------------1.SECTION PROFIL UTILISATEUR----------------------*/
 section.profil {
     height: 587px;
@@ -323,9 +323,9 @@ section.profil div.wrapper{
 width: 70%;
 margin-left: 20%;
 }
-
+ 
 /*------------------1.A SECTION MES INFOS------------------------------*/
-
+ 
 div.photo{
     float: left;
     width : 50%;
@@ -346,15 +346,15 @@ margin-left: 13%;
 position: absolute;
 padding-bottom: 2%;
 }
-
+ 
 section.profil_perso ul li:nth-child(1)  {background-image :url(../images/logo_connexion.png);}
 section.profil_perso ul li:nth-child(2)  {background-image :url(../images/layer.png);}
 section.profil_perso ul li:nth-child(3)  {background-image :url(../images/adresse.png);}
 section.profil_perso ul li:nth-child(4)  {background-image :url(../images/mail.png);}
 section.profil_perso ul li:nth-child(5)  {background-image :url(../images/tel.png); }
-
-
-/*-----------------1.B SECTION BADGES UTILISATEURS------------------------------*/ 
+ 
+ 
+/*-----------------1.B SECTION BADGES UTILISATEURS------------------------------*/
 .liste_badges li{
     display : inline-block;
 }
@@ -369,14 +369,14 @@ display:inline-block;
 section.badge figcaption{
     text-align: center;
 }
-
+ 
 /*-------------------2.SECTION DERNIERES CONTRIBUTIONS UTILISATEUR--------------*/
 section.contrib_user {
     height: 1027px;
     background-color: #e9e9e9;
 }
 section.contrib_user ul{margin-left: 17%;}
-
+ 
 section ul.contribution_auteur li {
     display: inline-block;
     padding-left: 2%;
@@ -384,23 +384,26 @@ section ul.contribution_auteur li {
     padding-bottom: 2%;
     width: 294px;
 }
-
+ 
 section ul.contribution_auteur figcaption{
     text-align : left;
     margin-left: -24%;
 margin-top: 2%;
 }
-
+ 
 section.contribution_auteur ul:nth-child(2){
     background-color: #FFF;
     height: 10%;
     padding-top: 3%;
     padding-bottom: 3%; 
 }
-
+ 
 section.contribution_auteur ul:nth-child(2) figcaption{
-
+ 
 }
+
+
+/*  CSS map popup*/
 .popup {
     text-align: center;
 }
