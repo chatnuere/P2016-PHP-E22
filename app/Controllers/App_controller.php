@@ -113,6 +113,16 @@ $tabPrincipal = array();
 
         $f3->set('userInfo', $userInfo);
   }
+
+  public function validate($f3){
+    $f3->set('validate',$this->model->validate(array('photoId'=>$f3->get('PARAMS.photoId'))));
+    $this->tpl['async']='partials/validate.html';
+  }
+
+  public function treated($f3){
+    $f3->set('treated',$this->model->treated(array('photoId'=>$f3->get('PARAMS.photoId'))));
+    $this->tpl['async']='partials/treated.html';
+  }
 }
 
 ?>
