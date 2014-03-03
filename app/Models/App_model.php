@@ -35,17 +35,21 @@ return $photo_mapper->find(array(),array('order'=>'id_photo DESC'));
 
 
   function signin($params){
-  	return $this->getMapper('user')->load(array('pseudo=?',$params['login']));
+  	return $this->getMapper('user')->load(array('pseudo=?',$params['login'])&&(array('mdp=?',$params['password'])));
  }
  
-
-
-
-
 
   public function getMyAccount($params){
          $userInfos=$this->dB->exec('SELECT   * FROM     `photo` LEFT JOIN `user` ON `photo`.`user_id` = `user`.`id_user` LEFT JOIN `badges` ON `photo`.`user_id` = `badges`.`user_id` WHERE    `photo`.`user_id`= '.$params['userId'].' ORDER BY `id_photo` DESC ;');
 		 return $userInfos;
+  }
+
+  public function validate($params){
+       return $this->mapper->exec('UPDATE `photo` SET `statut` = 0 WHERE `id_photo` ='.$params['photoId']);
+  }
+
+  public function treated($params){
+       return $this->mapper->exec('UPDATE `photo` SET `statut` = 1 WHERE `id_photo` ='.$params['photoId']);
   }
 
 } 
