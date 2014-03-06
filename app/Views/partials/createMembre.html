@@ -25,13 +25,20 @@
     <?php if(isset($error)): ?> 
     <div class="error"><?php echo $error; ?></div>
     <?php endif;?>  
-    <form action="signin/" id="signin" method="post">
-      <input type="text" name="login" placeholder="login" />
-      <input type="password" name="password" placeholder="password" />
-      <input type="submit" value="Sign in"/>
-    </form>
-    <h2><a href="">Retour à la carte</a></h2>
-    <h2><a href="createAccount">Inscription</a></h2>
+<h3>Inscription</h3>
+<form action="createAccount/" method="post">
+nom : <input type="text" name="nom" value=""><br />
+mot de passe : <input type="text" name="password" value=""><br />
+anniversaire : <input type="text" name="anniversaire" value=""><br />
+adresse : <input type="text" name="adresse" value=""><br />
+
+e-mail : <input type="text" name="mail" value=""><br />
+Confirmation : <input type="text" name="confirmation" value=""><br />
+
+téléphone : <input type="text" name="phone" value=""><br />
+
+<input type="submit" name="valider" value="Valider">
+</form>
    
 
   

@@ -29,7 +29,7 @@ class App_controller extends Controller
         $f3->set('tabPerso', $tabPrincipal);
     }
     
-    
+    /*Connexion au site*/
     public function signin($f3)
     {
         switch ($f3->get('VERB')) {
@@ -56,11 +56,33 @@ class App_controller extends Controller
         }
     }
     
-    
+    /*Déconnexion*/
     public function signout($f3)
     {
         session_destroy();
         $f3->reroute('/signin');
+    }
+
+
+    /*Création d'un nouveau compte*/
+    public function createAccount($f3)
+    {
+            switch ($f3->get('VERB')) {
+            case 'GET':
+                $this->tpl['sync'] = 'partials/createMembre.html';
+                break;
+            case 'POST':
+                $nom          = $f3->get('POST.nom');
+                $password  = $f3->get('POST.password');
+                $anniversaire = $f3->get('POST.anniversaire');
+                $adresse      = $f3->get('POST.adresse');
+                $mail         = $f3->get('POST.mail');
+                $phone        = $f3->get('POST.phone');
+                $this->model->createAccount($nom, $password, $anniversaire, $adresse, $mail, $phone);
+
+                $f3->reroute('/signin');
+                break;
+            }        
     }
     
     
@@ -98,6 +120,7 @@ class App_controller extends Controller
         $this->tpl['async'] = 'partials/membreinfo.html';
         $f3->set('userInfo', $userInfo);
     }
+
     /* Fonction de mise à jour des infos utilisateurs*/
     public function updateAccount($f3)
     {
@@ -113,6 +136,7 @@ class App_controller extends Controller
         $this->getMyAccount($f3);
         $this->tpl['async'] = 'partials/membreinfo.html';
     }
+
     /* Fonction d'afichage asynchrone des données utilisateurs*/
     public function getAccount($f3)
     {
