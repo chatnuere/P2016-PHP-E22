@@ -410,3 +410,18 @@ section.contribution_auteur ul:nth-child(2) figcaption{
 .popup img {
     width: 100%;
 }
+
+
+.box {
+    width: 294px;
+    height: 235px;
+    overflow: hidden;
+    position: relative;
+}
+.box img {
+    width: 400px;
+    min-height: 235px;
+    position: absolute;
+    left: -19%;
+    top: -5%;
+}

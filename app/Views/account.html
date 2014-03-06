@@ -45,19 +45,9 @@
         <h2>Mon profil</h2>
         <div class="roundedimage"></div><!--points sous le h2-->
 <div class="wrapper">
+<a id="updateInfo" href="getAccount/<?php echo($userInfo[0]['id_user']);?>">modifier</a>
         <section class="profil_perso">
-            <h3 class="edit">Mes infos</h3>
-            
-<div class="photo"><img src="public/images/profile.jpg"></div>
-<div>
-  <ul>
-    <li><?php echo($userInfo[0]["pseudo"]);?></li>
-    <li><?php  echo($userInfo[0]["anniversaire"]);?></li>
-    <li><?php  echo($userInfo[0]["adresse"]);?></li>
-    <li><?php  echo($userInfo[0]["mail"]);?></li>
-    <li><?php  echo($userInfo[0]["tel"]);?></li>
-  </ul>
-</div>
+           
         </section>
 
         <section class="badge">
@@ -111,7 +101,9 @@ switch ($userInfo[$i]["statut"]){
 }
 
 echo('<li><figure >
-<img class="figuredechet" src="public/images/uploaded/'.$userInfo[$i]["chemin"].'">
+<div class="box">
+<img src="public/images/uploaded/'.$userInfo[$i]["chemin"].'">
+</div>
     <figcaption >
       <ul>
         <li> <img src="public/images/date.png">'.$userInfo[$i]["time"].'</li>

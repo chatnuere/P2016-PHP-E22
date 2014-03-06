@@ -1,0 +1,17 @@
+ <h3 class="edit">Mes infos </h3>
+            
+<div class="photo"><img src="public/images/users/<?php  echo($userInfo[0]['picture']);?>"></div>
+<div>
+<form action="update/<?php echo($userInfo[0]['id_user']);?>" method="post">
+nom : <input type="text" name="nom" value="<?php echo($userInfo[0]['pseudo']);?>"><br />
+
+anniversaire : <input type="text" name="anniversaire" value="<?php  echo($userInfo[0]['anniversaire']);?>"><br />
+adresse : <input type="text" name="adresse" value="<?php  echo($userInfo[0]['adresse']);?>"><br />
+
+e-mail : <input type="text" name="mail" value="<?php  echo($userInfo[0]['mail']);?>"><br />
+Confirmation : <input type="text" name="confirmation" value="<?php  echo($userInfo[0]['mail']);?>"><br />
+
+téléphone : <input type="text" name="phone" value="0<?php  echo($userInfo[0]['tel']);?>"><br />
+
+<input type="submit" name="valider" value="alider">
+</form></div>

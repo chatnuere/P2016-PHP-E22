@@ -1,5 +1,0 @@
-{
-"latitude":"<?php echo $ardt->latitude; ?>",
-"longitude":"<?php echo $ardt->longitude; ?>",
-"chemin":"<?php echo $ardt->chemin; ?>"
-}

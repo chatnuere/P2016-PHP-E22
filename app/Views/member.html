@@ -45,18 +45,23 @@
         <div class="roundedimage"></div><!--points sous le h2-->
 <div class="wrapper">
         <section class="profil_perso">
-            <h3 class="edit">Mes infos</h3>
+           <h3 class="edit">Mes infos</h3>
             
 <div class="photo"><img src="public/images/profile.jpg"></div>
 <div>
-  <ul>
-    <li>Josette Delamotte</li>
-    <li>25 février 1984</li>
-    <li>20 rue du colonel Driant, 75 003</li>
-    <li>j.delamotte@gmail.com</li>
-    <li>06.58.98.65.20</li>
-  </ul>
-</div>
+<form action="inscription.php" method="post">
+nom : <input type="text" name="login" value="<?php if (isset($_POST['login'])) echo htmlentities(trim($_POST['login'])); ?>"><br />
+
+anniversaire : <input type="password" name="pass" value="<?php if (isset($_POST['pass'])) echo htmlentities(trim($_POST['pass'])); ?>"><br />
+adresse : <input type="password" name="pass_confirm" value="<?php if (isset($_POST['pass_confirm'])) echo htmlentities(trim($_POST['pass_confirm'])); ?>"><br />
+
+Adresse e-mail : <input type="password" name="pass" value="<?php if (isset($_POST['email'])) echo htmlentities(trim($_POST['email'])); ?>"><br />
+Confirmation de votre adresse e-mail : <input type="password" name="email_confirm" value="<?php if (isset($_POST['email_confirm'])) echo htmlentities(trim($_POST['email_confirm'])); ?>"><br />
+
+téléphone : <input type="text" name="login" value="<?php if (isset($_POST['login'])) echo htmlentities(trim($_POST['login'])); ?>"><br />
+
+<input type="submit" name="inscription" value="Inscription">
+</form></div>
         </section>
 
         <section class="badge">
