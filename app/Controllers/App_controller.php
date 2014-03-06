@@ -95,7 +95,6 @@ class App_controller extends Controller
                 "statut" => $elements[$i]["statut"]
             );
         }
-        $this->tpl['async'] = 'partials/membreinfo.html';
         $f3->set('userInfo', $userInfo);
     }
     /* Fonction de mise à jour des infos utilisateurs*/
@@ -108,23 +107,57 @@ class App_controller extends Controller
         $phone        = $f3->get('POST.phone');
         $userid       = $f3->get('PARAMS.userId');
         
-        $this->model->updateAccount($nom, $anniversaire, $adresse, $mail, $phone, $userid);
-        
+        if ($nom) {
+            $this->model->updateAccount($nom, $anniversaire, $adresse, $mail, $phone, $userid);
+        }
         $this->getMyAccount($f3);
-        $this->tpl['async'] = 'partials/membreinfo.html';
     }
     /* Fonction d'afichage asynchrone des données utilisateurs*/
     public function getAccount($f3)
     {
+        $f3->set('account', $this->model->getMyAccount(array(
+            'userId' => $f3->get('PARAMS.userId')
+        )));
+        
+        $userInfo = array();
+        $elements = $f3->get('account');
+        for ($i = 0; $i < sizeof($elements); $i++) {
+            $userInfo[$i] = array(
+                "pseudo" => $elements[$i]["pseudo"],
+                "mail" => $elements[$i]["mail"],
+                "adresse" => $elements[$i]["adresse"],
+                "tel" => $elements[$i]["tel"],
+                "anniversaire" => $elements[$i]["anniversaire"],
+                "id_user" => $elements[$i]["id_user"],
+                "picture" => $elements[$i]["picture"]
+            );
+        }
         $this->tpl['async'] = 'partials/membreinfo.html';
+        $f3->set('userInfo', $userInfo);
+        
     }
     /* Fonction d'afichage asynchrone du formulaire d'update des données utilisateurs*/
     public function changeAccount($f3)
     {
-        $f3->set('userPhoto', $this->model->getPhotoUser(array(
+        $f3->set('account', $this->model->getMyAccount(array(
             'userId' => $f3->get('PARAMS.userId')
         )));
-        $this->tpl['async'] = 'partials/membreinfo.html';
+        
+        $userInfo = array();
+        $elements = $f3->get('account');
+        for ($i = 0; $i < sizeof($elements); $i++) {
+            $userInfo[$i] = array(
+                "pseudo" => $elements[$i]["pseudo"],
+                "mail" => $elements[$i]["mail"],
+                "adresse" => $elements[$i]["adresse"],
+                "tel" => $elements[$i]["tel"],
+                "anniversaire" => $elements[$i]["anniversaire"],
+                "id_user" => $elements[$i]["id_user"],
+                "picture" => $elements[$i]["picture"]
+            );
+        }
+        $this->tpl['async'] = 'partials/majmembreinfo.html';
+        $f3->set('userInfo', $userInfo);
     }
 }
 

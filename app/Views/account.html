@@ -45,7 +45,8 @@
         <h2>Mon profil</h2>
         <div class="roundedimage"></div><!--points sous le h2-->
 <div class="wrapper">
-<a id="updateInfo" href="getAccount/<?php echo($userInfo[0]['id_user']);?>">modifier</a>
+<a id="seeInfo" href="getAccount/<?php echo($userInfo[0]['id_user']);?>">afficher</a>
+<a id="updateInfo" href="change/<?php echo($userInfo[0]['id_user']);?>">modifier</a>
         <section class="profil_perso">
            
         </section>
@@ -116,5 +117,7 @@ echo('<li><figure >
 
     
       </ul>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="public/js/scrapp.js"></script>
 </body>
 </html>
