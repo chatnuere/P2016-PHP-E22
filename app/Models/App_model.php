@@ -1,20 +1,5 @@
 <?php
-
-class App_model extends Model{
-  
-private $mapper;
-  
-   public function __construct(){
-     parent::__construct();
-     $this->mapper=$this->getMapper('photos');
-   } 
- 
-    public function home(){
     }
-
-
-    /*Gestion de la carte*/
-
     public function mapHome()
     {
         $photo_mapper = $this->getMapper('photos');
@@ -47,15 +32,8 @@ private $mapper;
         ));
     }
     
-
-    /*Gestion des connexion et users*/
-
     function signin($params)
     {
-        return $this->getMapper('users')->load(array(
-            'pseudo=? and mdp=?',
-            $params['login'],
-            $params['password']
         ));
     }
 
@@ -66,15 +44,10 @@ private $mapper;
     }
     
     public function updateAccount($nom, $anniversaire, $adresse, $mail, $phone, $userid)
+    public function updateAccount($nom, $anniversaire, $adresse, $mail, $phone, $chemin,$userid)
     {
         $this->dB->exec('UPDATE users SET pseudo ="' . $nom . '",anniversaire="' . $anniversaire . '", adresse="' . $adresse . '",`mail`="' . $mail . '", `tel`="' . $phone . '" WHERE `id_user`=' . $userid . ';');
+        $this->dB->exec('UPDATE users SET pseudo ="' . $nom . '",anniversaire="' . $anniversaire . '", adresse="' . $adresse . '",`mail`="' . $mail . '", `tel`="' . $phone . '", `picture`="' . $chemin . '" WHERE `id_user`=' . $userid . ';');
     }
-
-
-    public function createAccount($nom,$mdp,$anniversaire,$adresse,$mail,$phone)
-    {
-      $this->dB->exec('INSERT INTO users (`pseudo`, `mdp`, `mail`, `adresse`, `tel`, `anniversaire`) VALUES ("'.$nom.'","'.$mdp.'","'.$mail.'","'.$adresse.'",'.$phone.','.$anniversaire.')');
-    }
-
 }
 ?>
