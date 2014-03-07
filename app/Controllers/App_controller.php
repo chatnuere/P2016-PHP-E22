@@ -133,7 +133,7 @@ class App_controller extends Controller
     
     
     /* Fonction de mise à jour des infos utilisateurs*/
-    public function updateAccount($f3)
+        public function updateAccount($f3)
     {
         $nom          = $f3->get('POST.nom');
         $anniversaire = $f3->get('POST.anniversaire');
@@ -141,23 +141,25 @@ class App_controller extends Controller
         $mail         = $f3->get('POST.mail');
         $phone        = $f3->get('POST.phone');
         $userid       = $f3->get('PARAMS.userId');
-        
-        $f3->set('UPLOADS', 'public/images/users/');
-        
-        
-        \Web::instance()->receive(function($file) use ($f3)
-        {
-            $monfichier = $file['name'];
-            $f3->set('monfichier', $monfichier);
-        }, true, true);
+ 
+$f3->set('UPLOADS','public/images/users/');
+
+       
+       \Web::instance()->receive(function($file) use ($f3){
+          $monfichier=$file['name'];
+         $f3->set('monfichier',$monfichier);
+        },true,true);
         
         
         $chemin = $f3->get('monfichier');
-        
-        
-        if ($nom) {
+       
+           
+       if ($nom) {
             $this->model->updateAccount($nom, $anniversaire, $adresse, $mail, $phone, $chemin, $userid);
         }
+        
+        
+        $this->getMyAccount($f3);
     }
     
     
