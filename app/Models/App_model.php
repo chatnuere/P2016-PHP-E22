@@ -57,7 +57,6 @@ private $mapper;
             $params['login']
         ));
     }
- 
 
     public function getMyAccount($params)
     {
@@ -69,12 +68,12 @@ private $mapper;
     {
         $this->dB->exec('UPDATE users SET pseudo ="' . $nom . '",anniversaire="' . $anniversaire . '", adresse="' . $adresse . '",`mail`="' . $mail . '", `tel`="' . $phone . '" WHERE `id_user`=' . $userid . ';');
     }
-    }
+
 
     public function createAccount($nom,$mdp,$anniversaire,$adresse,$mail,$phone)
     {
       $this->dB->exec('INSERT INTO users (`pseudo`, `mdp`, `mail`, `adresse`, `tel`, `anniversaire`) VALUES ("'.$nom.'","'.$mdp.'","'.$mail.'","'.$adresse.'",'.$phone.','.$anniversaire.')');
     }
 
-} 
+}
 ?>
