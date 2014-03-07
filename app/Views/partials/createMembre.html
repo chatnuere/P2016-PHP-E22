@@ -17,28 +17,38 @@
 <body>
   <header>
     
-    
-    <a href="" class="logo">Scrapp</a>
-    
   </header>
   
     <?php if(isset($error)): ?> 
     <div class="error"><?php echo $error; ?></div>
     <?php endif;?>  
-<h3>Inscription</h3>
-<form action="createAccount/" method="post">
-nom : <input type="text" name="nom" value=""><br />
-mot de passe : <input type="text" name="password" value=""><br />
-anniversaire : <input type="text" name="anniversaire" value=""><br />
-adresse : <input type="text" name="adresse" value=""><br />
 
-e-mail : <input type="text" name="mail" value=""><br />
-Confirmation : <input type="text" name="confirmation" value=""><br />
 
-téléphone : <input type="text" name="phone" value=""><br />
+  <div id="inscription">
+        
+             <form action="createAccount/" method="post">
+            
+                 <fieldset class="clearfix">
+                
+                     <p><span class="fontawesome-user"></span><input type="text" name="nom" value="Nom" onBlur="if(this.value == '') this.value = 'Nom'" onFocus="if(this.value == 'Nom') this.value = ''" required/></p> 
+                     
+                     <p><span class="fontawesome-lock"></span><input type="password" name="password" placeholder="password" value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required/></p> 
 
-<input type="submit" name="valider" value="Valider">
-</form>
+                     <p><span class="fontawesome-user"></span><input type="text" name="mail" value="email" onBlur="if(this.value == '') this.value = 'email'" onFocus="if(this.value == 'email') this.value = ''" required/></p>
+
+                     <p><span class="fontawesome-user"></span><input type="text" name="adresse" value="adresse" onBlur="if(this.value == '') this.value = 'adresse'" onFocus="if(this.value == 'adresse') this.value = ''" required/></p>
+
+                    <p><span class="fontawesome-lock"></span><input type="text" name="anniversaire" placeholder="Anniversaire" value="anniversaire" onBlur="if(this.value == '') this.value = 'anniversaire'" onFocus="if(this.value == 'anniversaire') this.value = ''" required/></p> 
+
+                    <p><span class="fontawesome-lock"></span><input type="text" name="phone" placeholder="Tel" value="tel" onBlur="if(this.value == '') this.value = 'tel'" onFocus="if(this.value == 'tel') this.value = ''" required/></p> 
+
+                     <p><input type="submit" id="valider" value="Valider"></p>
+
+                 </fieldset>
+
+             </form>
+       
+      </div>
    
 
   
