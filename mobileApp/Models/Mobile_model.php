@@ -9,7 +9,7 @@ private $mapper;
   }
   
   public function login($params){
-    return $this->getMapper('users')->load(array('username=? and password=?',$params['username'],md5($params['password'])));
+    return $this->getMapper('users')->load(array('pseudo=? and mdp=?',$params['username'],md5($params['password'])));
   }
 
    //Pour que l'utilisateur envoie ses données à la bdd lors de son enregistrement 
@@ -22,6 +22,11 @@ public function insertScrap( $chemin,$longitude,$latitude, $salete)
         $this->dB->exec('INSERT INTO photos (`chemin`, `longitude`, `latitude`, `ardt`, `pollution`, `user_id` , `statut`) VALUES ("' . $chemin . '","' . $longitude . '","' . $latitude . '","0",' . $salete . ', 2, 0)');
     }
   
+public function createAccount($nom, $mdp, $mail)
+  {
+        $this->dB->exec('INSERT INTO users (`pseudo`, `mdp`, `mail`) VALUES ("' . $nom . '","' . $mdp . '","' . $mail . '")');
+  }
+    
   
 }
 ?>

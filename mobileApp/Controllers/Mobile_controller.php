@@ -39,6 +39,27 @@ class Mobile_controller extends Controller{
     }
     
   }
+
+
+      /*Création d'un nouveau compte || Page d'enregistrement*/
+    
+    public function createAccount($f3)
+    {
+        switch ($f3->get('VERB')) {
+            case 'GET':
+                $this->tpl['sync'] = 'register.html';
+                break;
+            
+            case 'POST':
+                $nom          = $f3->get('POST.username');
+                $password     = $f3->get('POST.password');
+                $mail         = $f3->get('POST.email');
+                $this->model->createAccount($nom, $password, $mail);
+                
+                $f3->reroute('/mobile');
+                break;
+        }
+    }
  
   
   
@@ -47,13 +68,6 @@ class Mobile_controller extends Controller{
   }
 
 
-//pour la page d'enregistrement (register)  
-
-//1. template à affciher après spécification de la route dans routes.ini
-
-  public function register($f3){
-    $this->tpl['sync']='register.html';
-  } 
   
  //2. fonction pour que l'utilisateur s'enregistre : username, password et email
  public function submit($f3){
