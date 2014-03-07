@@ -28,8 +28,8 @@ class Mobile_controller extends Controller{
           'password'=>$f3->get ('POST.password')
         ));
         if($user){
-          $f3->set('SESSION.username',$user->username);
-          $f3->set('SESSION.id',$user->id);
+          $f3->set('SESSION.username',$user->pseudo);
+          $f3->set('SESSION.id',$user->id_user);
           $f3->reroute('/mobile/membre');
         }
         else{

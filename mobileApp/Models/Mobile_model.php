@@ -9,7 +9,9 @@ private $mapper;
   }
   
   public function login($params){
-    return $this->getMapper('users')->load(array('pseudo=? and mdp=?',$params['username'],md5($params['password'])));
+    return $this->getMapper('users')->load(array('pseudo=? and mdp=?',
+      $params['username'],
+      $params['password']));
   }
 
    //Pour que l'utilisateur envoie ses données à la bdd lors de son enregistrement 
