@@ -25,7 +25,7 @@
     <nav id="firstNav">
      <img src="public/images/logo_scrapp.png" alt="scrapp logo" />
            <ul id="nav">
-               <li><a id="connect" href="#login">Connexion</a></li>
+          	<li><a id="connect" href="signin">Connexion</a></li>
                <li><a id="m2" href="#slide2">Contributions</a></li>
                <li><a id="m3" href="#slide3">Concept</a></li>
                <li><a id="m4"href="#slide1">Carte</a></li>
@@ -34,12 +34,12 @@
 
 			  	<div id="login">
         
-            <form action="javascript:void(0);" method="get">
+            <form method="post" action="signin/">
             
                 <fieldset class="clearfix">
                 
-                    <p><span class="fontawesome-user"></span><input type="text" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
-                    <p><span class="fontawesome-lock"></span><input type="password"  value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
+                    <p><span class="fontawesome-user"></span><input type="text" name="login" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                    <p><span class="fontawesome-lock"></span><input type="password" name="password" value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
                     <p><input type="submit" id="submit" value="Connexion"></p>
 
                 </fieldset>

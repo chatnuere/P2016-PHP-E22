@@ -65,7 +65,7 @@ class App_controller extends Controller
     public function signout($f3)
     {
         session_destroy();
-        $f3->reroute('/signin');
+        $f3->reroute('/');
     }
     
     
