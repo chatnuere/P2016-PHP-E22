@@ -99,6 +99,12 @@ class App_controller extends Controller
     
     public function getMyAccount($f3)
     {
+		if( $f3->get('PARAMS.userId') ==1){
+			 $f3->set('statut', $this->model->getPending(array(
+            'statut' => 0
+        )));
+			
+		}else{
         $f3->set('account', $this->model->getMyAccount(array(
             'userId' => $f3->get('PARAMS.userId')
         )));
@@ -128,6 +134,7 @@ class App_controller extends Controller
             );
         }
         $f3->set('userInfo', $userInfo);
+        }
     }
     
     
