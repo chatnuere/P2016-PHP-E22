@@ -103,6 +103,36 @@ class App_controller extends Controller
 			 $f3->set('statut', $this->model->getPending(array(
             'statut' => 0
         )));
+        $this->tpl['sync'] = 'back.html';
+        
+        $pending = array();
+        $elements = $f3->get('statut');
+        for ($i = 0; $i < sizeof($elements); $i++) {
+            $userInfo[$i] = array(
+                "pseudo" => $elements[$i]["pseudo"],
+                "mail" => $elements[$i]["mail"],
+                "adresse" => $elements[$i]["adresse"],
+                "tel" => $elements[$i]["tel"],
+                "anniversaire" => $elements[$i]["anniversaire"],
+                "picture" => $elements[$i]["picture"],
+                "date" => $elements[$i]["date"],
+                "nuage" => $elements[$i]["nuage"],
+                "coeur" => $elements[$i]["coeur"],
+                "goutte" => $elements[$i]["goutte"],
+                "souris" => $elements[$i]["souris"],
+                "check" => $elements[$i]["check"],
+                "fleur" => $elements[$i]["fleur"],
+                "chemin" => $elements[$i]["chemin"],
+                "time" => $elements[$i]["time"],
+                "id_user" => $elements[$i]["id_user"],
+                "statut" => $elements[$i]["statut"]
+            );
+        }
+        $f3->set('pending', $pending);
+        
+        var_dump($pending);
+        
+
 			
 		}else{
         $f3->set('account', $this->model->getMyAccount(array(
