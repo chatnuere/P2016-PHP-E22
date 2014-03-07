@@ -5,3 +5,9 @@ RewriteCond %{REQUEST_FILENAME} !-l
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* index.php [L,QSA]
+
+
+
+RewriteCond %{HTTP_USER_AGENT} "ipod|iphone|ipad" [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} "android|palm"
+RewriteRule (.*) http://preprod.hetic.net/p2016/srapp/mobile [R=301,L]
