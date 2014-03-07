@@ -52,9 +52,10 @@ private $mapper;
 
     function signin($params)
     {
-        return $this->getMapper('user')->load(array(
-            'pseudo=?',
-            $params['login']
+        return $this->getMapper('users')->load(array(
+            'pseudo=? and mdp=?',
+            $params['login'],
+            $params['password']
         ));
     }
 
