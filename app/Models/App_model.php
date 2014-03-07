@@ -50,6 +50,14 @@ class App_model extends Model
         ));
     }
     
+        public function getPhotoUser($params)
+    {
+        return $this->mapper->find(array(
+            'statur=?',
+            $params['statut']
+        ));
+    }
+    
     
     /*Gestion des connexion et users*/
     
@@ -67,6 +75,8 @@ class App_model extends Model
         $userInfos = $this->dB->exec('SELECT   * FROM     `photos` p LEFT JOIN `users` u ON p.`user_id` = u.`id_user` LEFT JOIN `badges` b ON p.`user_id` = b.`user_id` WHERE    p.`user_id`= ' . $params['userId'] . ' ORDER BY `id_photo` DESC ;');
         return $userInfos;
     }
+    
+    
     
     public function updateAccount($nom, $anniversaire, $adresse, $mail, $phone, $chemin, $userid)
     {
