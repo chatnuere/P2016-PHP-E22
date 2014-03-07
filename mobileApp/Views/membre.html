@@ -1,17 +1,131 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
-        <base href="<?php echo $BASE; ?>/">
-        <base href="<?php echo $web; ?>/">
-        <link rel="stylesheet" type="text/css" href="public/mobile/stylesheet/style.css" />
-        <link rel="stylesheet" type="text/css" href="public/mobile/stylesheet/fonts.css" />
-        
-        <title>espace auquel l'utilisateur aura accès pour prendre la photo</title>
-    </head>
-    <body>
-    Bienvenue <br />
-    <a href="deconnexion/">Déconnexion</a>
-    </body>
-</html>
+<!DOCTYPE html>
+ <html>
+        <head>
+       <base href="<?php echo $BASE; ?>/">
+                <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+                <link rel="stylesheet" type="text/css" href="style/style_geoloc.css" />
+                <link rel="stylesheet" type="text/css" href="style/style.css" />
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"> </script>
+                <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"> </script>        
+        </head>
+       
+        <body>
+<h1>Upload</h1>
+                <div id="googleMap" class=""></div>
+                <button onclick="stopGeolocalisation();">Arrêter la géolocalisation</button>
+
+
+
+
+
+
+<form action="mobile/uploadPhoto" enctype="multipart/form-data" method="post">
+<div class="">
+<p>Latitude</p>
+<input type="text" name="latitude" id="lat" value=""></br>
+<p>Longitude</p>
+<input type="text" name="longitude" id="lon" value=""></br>
+</div>
+
+<p>Importance de la saleté</p>
+<input type="number" min="1"  max="5" step="1" pattern="\d+" name="salete"/>
+<p>Photo</p>
+<input name="fichier"  type="file" />
+<input name="upload" type="submit" value="Uploader" />
+</form>
+
+        </body>
+
+<!-- script geoloc-->
+ <script type="text/javascript">
+                var googleMap;
+               // var oldLat = null;
+               // var oldLng = null;
+               
+                $(function() {
+                        if(navigator.geolocation) {
+                                //initialise la map
+                                googleMap = new google.maps.Map($("#googleMap").get(0), {
+                                        zoom: 18,
+                                        center: new google.maps.LatLng(48.9021450, 2.46992090), //on centre la carte par défaut
+                                        mapTypeId: google.maps.MapTypeId.SATELLITE // peut-être remplacé par roadmap 
+                                });
+                               
+                                startLocalisation();   
+                        } else {
+                                alert('Votre navigateur ne supporte pas la géolocalisation HTML5');
+                        }
+                });
+               
+                function startLocalisation() {
+                        //active le GPS pour commencer la géolocalisation
+                        var userPosition = navigator.geolocation.getCurrentPosition(callbackSuccess, callbackError, {enableHighAccuracy: true});
+                }
+               
+                function callbackSuccess(position) {
+                        //récupère la latitude et la longitude
+                       var latitude = position.coords.latitude;
+                       var longitude = position.coords.longitude;
+                        document.getElementById("lat").value = position.coords.latitude;
+                    document.getElementById("lon").value = position.coords.longitude;
+
+                  //  console.log(longitude);
+                        //trace un marqueur qu'on peut personnaliser avec le paramètre : icon: "fleche.png" par exemple
+                        var marker = new google.maps.Marker({
+                                position: new google.maps.LatLng(latitude, longitude),
+                                map: googleMap
+                        });
+                       
+                        //centre la map aux coordonnées données par notre posdition courante
+                                googleMap.panTo(new google.maps.LatLng(latitude, longitude));
+                       
+                        //trace une ligne entre l'ancienne position et la nouvelle
+                        if(oldLat) {
+                       
+                                var lines = [
+                                                new google.maps.LatLng(oldLat, oldLng),
+                                                new google.maps.LatLng(latitude, longitude)
+                                ];
+                               
+                                //dessine les lignes
+                                var line = new google.maps.Polyline({
+                                                path: lines,
+                                                strokeColor: "blue",
+                                                strokeOpacity: 1.0,
+                                                strokeWeight: 3,
+                                                map: googleMap
+                                });
+                        }
+                       
+                        //actualise les anciennes positions
+                        //oldLat = latitude;
+                        //oldLng = longitude;
+                }
+               
+                function callbackError(error) {
+                        switch(error.code) {
+                                case error.UNKNOWN_ERROR:
+                                                alert("La géolocalisation a rencontré une erreur.");
+                                break;
+                                case error.PERMISSION_DENIED:
+                                                alert("L'utilisateur n'a pas voulu donner sa position.");
+                                break;
+                                case error.POSITION_UNAVAILABLE:
+                                                alert("Les coordonnées de l'utilisateur n'ont pas pu être trouvées.");
+                                break;
+                                case error.TIMEOUT:
+                                                alert("La géolocalisation prend trop de temps.");
+                                break;
+                        }
+                }
+               
+                function stopGeolocalisation(){
+                        navigator.geolocation.clearWatch(userPosition);
+                }
+                </script>
+
+
+ </html>
+
+
+

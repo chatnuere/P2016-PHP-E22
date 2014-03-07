@@ -52,7 +52,7 @@ class App_model extends Model
     
         public function getPending($params)
     {
-       $pending = $this->dB->exec('SELECT   * FROM     `photos` p LEFT JOIN `users` u ON p.`user_id` = u.`id_user` LEFT JOIN `badges` b ON p.`user_id` = b.`user_id` WHERE    p.`statut`= ' . $params['statut'] . ' ORDER BY `id_photo` ASC ;');
+       $pending = $this->dB->exec('SELECT   * FROM     `photos` p LEFT JOIN `users` u ON p.`user_id` = u.`id_user`  WHERE    p.`statut`= 0 ORDER BY `id_photo` ASC ;');
         return $pending;
     }
     

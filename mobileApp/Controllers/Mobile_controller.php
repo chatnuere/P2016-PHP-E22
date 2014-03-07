@@ -2,13 +2,21 @@
 class Mobile_controller extends Controller{
 
 
-  public function __construct(){
+  /*public function __construct(){
     parent::__construct();
     $f3=\Base::instance();
     if(!$f3->get('SESSION.id')&&$f3->get('PATTERN')!='/mobile')
       $f3->reroute('/mobile');
     $this->tpl=array();
-  }
+  }*/
+  
+   public function __construct()
+    {
+        parent::__construct();
+        $this->tpl = array(
+            'sync' => 'home.html'
+        );
+    }
   
   
   public function home($f3){
@@ -31,6 +39,7 @@ class Mobile_controller extends Controller{
     }
     
   }
+ 
   
   
   public function membre($f3){
@@ -71,7 +80,36 @@ class Mobile_controller extends Controller{
   
 //3.Fonction upload de photo
 
+  public function uploadPhoto($f3){
+  
 
+        $latitude        = $f3->get('POST.latitude');
+        $longitude       = $f3->get('POST.longitude');
+        $salete       = $f3->get('POST.salete');
+ 
+ 
+$f3->set('UPLOADS','public/images/uploaded/');
+
+       
+       \Web::instance()->receive(function($file) use ($f3){
+       var_dump($file);
+         $monupload=$file['name'];
+         $f3->set('monupload',$monupload);
+        },true,true);
+        
+        
+        $chemin = $f3->get('monupload');
+           
+       if ($latitude) {
+		   $this->model->insertScrap($chemin,$latitude, $longitude, $salete);
+        }
+            $this->merci($f3);
+
+  } 
+  
+    public function merci($f3){
+    $this->tpl['sync']='merci.html';
+  } 
   
 }
 ?>
