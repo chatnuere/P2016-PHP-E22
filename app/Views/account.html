@@ -11,34 +11,27 @@
     <base href="<?php echo $BASE; ?>/">
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <link href="public/fonts/fonts.css" rel="stylesheet" type="text/css">
-    <link href="public/stylesheet/scrapp.css" rel="stylesheet" type=
+   
+    <link href="public/stylesheet/scrapp_account.css" rel="stylesheet" type=
     "text/css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:200,400,700' rel='stylesheet' type='text/css'>
     <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel=
     'stylesheet'>
 </head>
 
 <body>
-    <header>
-        <h1><img alt="Logo scrapp" src="public/images/logo.png"></h1>
-
-        <nav>
-            <ul class="main_menu">
-                <li><a href="#carte">Carte</a></li>
-
-                <li><a href="#contrib">Dernières contributions</a></li>
-
-                <li><a href="#concept">Concept</a></li>
-
-                <li><a href="#apropos">A propos</a></li>
-
-                <li>
-                    <div class="fleche fleche-droite">
-                        <a href="">Connexion</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <!--MENU -->
+        <nav id="firstNav">
+          <a href="http://preprod.hetic.net/p2016/srapp"><img src="public/images/logo_scrapp.png" alt="scrapp logo" /></a>
+              <ul id="nav">
+                  <li><a id="connect" href="#">Connexion</a></li>
+                
+                  <li><a id="m3" href="#slide3">Mes contributions</a></li>
+                  <li><a id="m4"href="#slide1">Accueil</a></li>
+              </ul>
+          </nav>
 
 <!--SECTION DU PROFIL UTILISATEUR -->
     <section class="profil">
@@ -119,5 +112,6 @@ echo('<li><figure >
       </ul>
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="public/js/scrapp.js"></script>
+  
 </body>
 </html>

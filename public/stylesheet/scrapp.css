@@ -1,296 +1,603 @@
-/* =========================================================================================================
-                                                    @RESET CSS
-===========================================================================================================*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@media only screen and (max-width: 1315px) {
+   
+#main_left{
+	float: left;
+margin-top: -230px;
+margin-left: -200px;
+	
+}
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
 }
 
 
-/* =========================================================================================================
-            										@GeneralGroup
-===========================================================================================================*/
-html,body {
-    font-family: Conv_TitilliumText22L004, sans-serif;
-    background-color: #FFF;
-    overflow: none;
-    height: 100%;
-}
-h3{
-  font-family: Conv_TitilliumText22L004, sans-serif;
-font-size: 18pt;
-color : black;
-}
-a,a:visited {
-    font-family: Conv_TitilliumText22L004, Arial;
-    text-decoration: none;
-    color: #000;
+
+@font-face {
+font-family: 'bebas neue';
+src: url('BebasNeue.otf');
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+@font-face {
+font-family: 'intro';
+src: url('Intro.otf');
 }
 
-h1 {
-    margin-top : 1%;
-    margin-left: 10%;
-    height: 67px;
-    width: 140px;
-    position: absolute;
-}
+/*______________________________________________*/
 
-h2 {
-    font-family: Conv_Intro, Arial, sans-serif;
+
+body{
+	background: url('../images/bg_cover.jpg') center no-repeat fixed;
+	background-size: cover;
+	width:100%;
+	height:100%;
+	padding-top: 415px;
 }
 
 
-/* ======================================================================================================
-           											@MainPageGroup
-========================================================================================================*/
+a{
+	text-decoration: none;
+	color: #000;
+	font: 1em "titillium web", helvetica, arial, sans-serif;	
+	font-weight: 200;
 
-/*---------1.SECTION MENU------------*/
-header {
-    background-color: #FFF;
-    vertical-align: center;
-    border-bottom: 1px solid #d7d7d7;
-    border-left: 1px solid #d7d7d7;
-    height: 107px;
-}
-header nav ul.main_menu {
-    float: right;
-    margin-right :-2%;
-    height : 110px;
-    margin-top : 0%;
-}
-header ul.main_menu li {
-    display: inline;
-    padding: 0 1.5em;
-}
-header ul.main_menu:nth-child(5) {
-background-image: url(../images/logo_connexion.png);
-width : 11px;
-height:14px;
-background-repeat: no-repeat;
-}
-header ul.main_menu li a{ height : 110px;}
-.fleche{
-display: inline-block;
-  position: relative;
-  width:120px;
-  background: #f7f7f7;
-  height:107px;
-  text-align:center;
-  color:#fff;
-  vertical-align: middle;
-}
-.fleche-droite:before{
-    content: "";
-    position: absolute;
-    left: -20px;
-    top: 0;
-    border-top: 55px solid transparent;
-    border-bottom: 55px solid transparent;
-    border-right: 20px solid #f7f7f7; 
+	
 }
 
-/*-----------2.SECTION INTRO------------*/
-
-section.intro{
-    background-image: url('../images/back_bost.jpg'); 
-   -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height : 796px;
-    background-repeat: no-repeat;
+h1{
+	font: 8em "bebas neue", helvetica, arial, sans-serif;	
+	color: #fff;
+	float: left;
+	
 }
 
-video{
-height : 331px;
-position: absolute;
-margin-left: 55%;
-margin-top: 19%;
-border: 30px solid #fbfafa;
--moz-box-shadow: 2px 0px 20px 0px #656565;
--webkit-box-shadow: 2px 0px 20px 0px #656565;
--o-box-shadow: 2px 0px 20px 0px #656565;
-box-shadow: 2px 0px 20px 0px #656565;
 
-}
+/*__________________MENU_____________________*/
 
-/*-----------3.SECTION MAP & LIST------------*/
-section.h2 {
-    width: 100%;
-    height: 100px; 
-}
-
-h2 {
-    font-size: 24px;
-    padding-top: 2%;
-    text-align: center;
-}
-
-div.roundedimage {
-    background-image: url(../images/ellipses.png);
-    width: 29px;
-    height: 7px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 3%;
-    margin-top : 1%;
-}
-
-#map {
+nav{
+	background-color: #fff;
 	width: 100%;
-    height: 546px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 65px;
+	margin: auto;
+	padding-top: 10px;
+	box-shadow: 0 2px 6px rgba(0,0,0, 0.2);
+	z-index: 999;
+	
+	
 }
 
-section#carte ul:nth-child(2) {
-    background-color: #FFF;
-    height: 10%;
-    text-align: center;
-    padding-top: 3%;
-    padding-bottom: 3%;
+ul{
+	line-height : 50px;
 }
 
-.tache li{
-    display : inline-block;
-    width:13%;
+ul#nav li{
+	display: inline;
+	float: right;
+	margin: 0 2em 0 2em;
 }
 
-section ul.tache figcaption{
-    margin-top : -2%;
+ul#nav li a:hover{
+	color: #aecc54;
 }
 
-section.tache ul:nth-child(2) li {
-    font-size: 14px;
-    padding-right: .5em;
-    padding-left: 1em;
+li a#connect{
+	padding: 1.5em  3em;
+	font-weight: 400;
+	text-decoration: underline;
+
+	border-left: 1px solid rgba(0, 0, 0, .2);
+	-webkit-background-clip: padding-box; /* for Safari */
+	background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+	
+	
 }
 
-/*---------3.SECTION DERNIERES CONTRIBUTIONS------------*/
-section.contrib:nth-child(3) {
-    background-color: #e9e9e9;
-    width: 100%;
-    display: inline-block;
-    height : 620px;
+li a#connect:hover{
+	text-decoration: none;
+
 }
 
-section.contrib ul.contribution li {
-    display: inline-block;
-    padding-left: 1.8%;
-    padding-right: 1.8%;
-    padding-bottom: 2%;
-    width: 294px;
+li a#connect:before{
+	content: url(../images/icon_connexion.png);
+	margin: 0.6em;
+	
+	
+	
 }
 
-section.contrib ul:nth-child(3) {
-    text-align: center;
-    padding-top: 3%;
+nav img{
+float: left;
+margin-left: 50px;
 }
 
-section.contrib ul:nth-child(3) li {
-    display: inline-block;
-}
-section.contrib ul:nth-child(3) figcaption {
-    text-align: left;
+
+
+/*__________________SLIDE 1_____________________*/
+
+
+#slide1{
+	width: 100%;
+	height: 450px;
+	background-color: #fbfafa;
+	
 }
 
-.figuredechet {
-max-width: 294px;
-max-height: 235px;
-}
-/*---------4.SECTION NOTRE SERVICE------------*/
-section#concept:nth-child(4) {
-    height: 799px;
-    background-image: url(../images/background.jpg);
-    width: 100%;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-/*display:inline-block;*/
+
+/*__________________SLIDE 3_____________________*/
+
+#slide3 h3.title{
+ position: relative;
+ top: -20px;
+ width: 330px;
+ background-color: #b2c878;
+ text-align: center;
+ color: #fff;
+ text-transform: uppercase;
+ font: 1.2em 'titillium web', helvetica, arial, sans-serif;
+ font-weight: 200;
+ padding: 6px 0;
 }
 
-h2.service {
-    color: #FFF;
-    text-align: center;
-    margin-top: 0;
-    padding-top: 37px;
+
+#slide3{
+ width: 100%;
+ margin: 0 auto;
+ background-color: #fff;
+ padding-bottom: 20px;
 }
 
-div.roundedimage_bl {
-    background-image: url(../images/ellipses_bl.png);
-    width: 29px;
-    height: 7px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 80px;
-    margin-top : 1%;
+
+#content_contribs{
+ width: 1200px;
+ margin: 0 auto;
 }
 
-section ul.service_pres li {
-    display: inline-block;
-    text-align: center;
-    padding-left: 1%;
+#content_contribs{
+ margin: 0 auto;
 }
 
-section ul.service_pres {
-    padding-left: 4%;
+#content_contribs ul li{
+ display: inline-block;
+ margin: 50px 1.5%;
+ width: 360px;
 }
 
-p {
-    color: #FFF;
-    white-space: pre;
-    text-align: center;
-    padding-top: 5%;
+
+#content_contribs img{
+ float: left;
 }
+
+#content_contribs p{
+ font: 1em 'titillium web', helvetica, arial, sans-serif;
+ font-weight: 200;
+ margin-top: 10px;
+ 
+}
+
+#content_contribs span{
+ font-weight: 400;
+ color: #aecc54;
+
+ 
+}
+
+#content_contribs p.de{
+ float: left;
+}
+
+#content_contribs p.dates{
+ float: right;
+}
+
+
+			/*__________________Bloc droit_____________________*/
+
+
+#teaser_right{
+	float: right;
+	margin: -250px 150px 0 0;
+}
+
+#teaser_right div#baseline{
+	height: 90px;
+	width: 320px;
+	padding-bottom: 40px;
+}
+
+
+#teaser_right div div#app_mobile{
+	float: right;
+	width: 40px;
+	font: 1em "bebas neue", helvetica, arial, sans-serif;
+	color: #FFF;	
+	margin-top: 10px;
+	line-height: 115%;
+	
+}
+
+div#content{
+	background: url('../images/bg_youtube.png') no-repeat;
+	width: 563px;
+	padding-top: 44px;
+}
+
+div#content div{
+	margin: 0 auto;
+	width: 476px;
+	height: 277px;
+}
+							/*__________________Boutons_____________________*/
+
+
+.button {
+	padding: 16px 20px 16px 20px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	display: inline-block;
+	width: 188px;
+	text-align: left;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 3px;
+	margin: 20px 2px 5px 0;
+	text-shadow: 0px 1px rgba(0, 0, 0, 0.65);
+	
+	
+	
+}
+.button span.icon {
+	width: 40px;
+	height: 45px;
+	display: block;
+	background: url('../images/button_icons3.png') no-repeat top left;
+	opacity:0.8;
+	
+	float: left;
+	margin: 0 12px 0 8px;
+}
+.button em {
+	font-size: 12px;
+	font-weight: bold;
+	display: block;
+	color: #fff;
+	text-shadow: 0px 1px rgba(0, 0, 0, 0.65);
+	font-style: normal;
+}
+.button:active {
+	-webkit-box-shadow: inset 0px 0px 7px #333;
+	-moz-box-shadow: inset 0px 0px 7px #333;
+	box-shadow: inset 0px 0px 7px #333;
+}
+.button#apple {
+	background: url("../images/bg_button2.png") no-repeat; 
+	float: left;
+	
+}
+.button#apple em {
+	color: #fff;
+}
+.button#apple:hover {
+	background: url("../images/bg_button2.png") no-repeat; 
+	opacity: 0.8;
+	
+}
+
+
+.button#gplay {
+	background: url("../images/bg_button3.png") no-repeat; 
+	float: right;
+	margin-right: -10px;
+	
+	
+}
+.button#gplay em {
+	color: #60686f;
+}
+.button#gplay:hover {
+	background: url("../images/bg_button3.png") no-repeat; 
+	opacity: 0.8;
+	
+}
+
+.button#gplay span.icon {
+	background-position: 0px -43px;
+}
+
+.button#gplay span#googleplay {
+	color: #60686f;
+}
+
+
+			/*__________________Bloc gauche_____________________*/
+
+
+#main_left{
+	float: left;
+	margin-top: -230px;
+	
+	
+}
+
+			/*__________________Compteur_____________________*/
+
+
+.title{
+	margin: 0 auto;
+	z-index: 800;
+	position: relative;
+	width: 250px;
+	
+}
+
+#title {
+	clear: both;
+	position: relative;
+	top: -115px;
+	padding-top: 85px;
+	width: 490px;
+	height: 200px;
+	z-index: 800;
+	background: url('../images/bg_chiffres.png') no-repeat;
+	
+}
+
+.title div#compteur{
+	margin: 0 0 0 120px;	
+	width: 300px;
+}
+
+h2#chiffres{
+	font: 6em "bebas neue", helvetica, arial, sans-serif;
+	color: #b2c878;
+	display: inline;
+	text-shadow: 0 1px 1px rgba(0,0,0, 0.6);
+	
+	
+}
+
+
+#dechets{
+	width: 50px;
+	display: inline-block;
+	position: relative;
+	top: -35px;
+	text-transform: uppercase;
+	color: #a3a3a3;
+	font:  1em 'titillium web', helvetica, arial, sans-serif;
+	font-weight: 700;	
+	line-height: 120%;
+	
+	
+	
+}
+
+div div#shadow{
+	box-shadow: 0px 0px #818181;
+	-webkit-box-shadow: 0px 3px 5px #818181;
+	-moz-box-shadow: 5px 5px 5px #818181;
+	}
+}
+/*__________________SLIDE 2_____________________*/
+
+
+#map{
+	width:100%;
+
+	
+}
+
+#map img{
+
+	width:100%;
+}
+
+
+/*__________________SLIDE 3_____________________*/
+#slide4{
+	width: 1200px;
+	height: 700px;
+	margin: 0 auto;
+}
+
+ul#etapes{
+	margin-top: 80px;
+}
+
+ul#etapes li{
+	display: inline-block;
+	width: 234px;
+	height: 390px;
+	margin: 20px 2.6%;
+	text-align: center;
+	
+}
+
+#slide4 h3.title{
+	position: relative;
+	top: -20px;
+	width: 330px;
+	background-color: #b2c878;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font: 1.2em 'titillium web', helvetica, arial, sans-serif;
+	font-weight: 200;
+	padding: 6px 0;
+}
+
+.picto{
+	height: 290px;
+	width: 100%;
+	background-color: #fff;
+	border-radius: 2px;
+	margin-bottom: 30px;
+}
+.picto img{
+	margin-top: 35px;
+}
+
+
+
+.nombres{
+	width: 39px;
+	height: 39px;
+	margin: 0 auto;
+	font: 1.2em 'intro', helvetica, arial, sans-serif;
+	line-height: 45px;
+	position: relative;
+	top: -20px;
+	color: #fff;
+	box-shadow: 0 1px 1px rgba(0,0,0, 0.2);
+}
+
+#n1{
+	background-color: #8781a2;
+}
+
+#n2{
+	background-color: #74a1a7;
+}
+
+#n3{
+	background-color: #feb478;
+}
+
+#n4{
+	background-color: #b5c26f;
+}
+
+
+	
+
+
+.titre_etape{
+	font: 1.2em 'titillium web', helvetica, arial, sans-serif;
+	font-weight: 400;
+	color: #fff;
+	margin-top: 10px;
+	text-transform: uppercase;
+}
+
+.phrase_etape{
+	font: 1em 'titillium web', helvetica, arial, sans-serif;
+	font-weight: 200;
+	color: #fff;
+	
+}
+
+
+
+/*__________________SLIDE 3_____________________*/
+#slide4{
+	width: 1200px;
+	height: 700px;
+	margin: 0 auto;
+}
+
+ul#etapes{
+	margin-top: 80px;
+}
+
+ul#etapes li{
+	display: inline-block;
+	width: 234px;
+	height: 390px;
+	margin: 20px 2.6%;
+	text-align: center;
+	
+}
+
+#slide4 h3.title{
+	position: relative;
+	top: -20px;
+	width: 330px;
+	background-color: #b2c878;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font: 1.2em 'titillium web', helvetica, arial, sans-serif;
+	font-weight: 200;
+	padding: 6px 0;
+}
+
+.picto{
+	height: 290px;
+	width: 100%;
+	background-color: #fff;
+	border-radius: 2px;
+	margin-bottom: 30px;
+}
+.picto img{
+	margin-top: 35px;
+}
+
+
+
+.nombres{
+	width: 39px;
+	height: 39px;
+	margin: 0 auto;
+	font: 1.2em 'intro', helvetica, arial, sans-serif;
+	line-height: 45px;
+	position: relative;
+	top: -20px;
+	color: #fff;
+	box-shadow: 0 1px 1px rgba(0,0,0, 0.2);
+}
+
+#n1{
+	background-color: #8781a2;
+}
+
+#n2{
+	background-color: #74a1a7;
+}
+
+#n3{
+	background-color: #feb478;
+}
+
+#n4{
+	background-color: #b5c26f;
+}
+
+
+	
+
+
+.titre_etape{
+	font: 1.2em 'titillium web', helvetica, arial, sans-serif;
+	font-weight: 400;
+	color: #fff;
+	margin-top: 10px;
+	text-transform: uppercase;
+}
+
+.phrase_etape{
+	font: 1em 'titillium web', helvetica, arial, sans-serif;
+	font-weight: 200;
+	color: #fff;
+	
+}
+
+/*__________________SLIDE 4_____________________*/
+
+#slide3 h3.title{
+	position: relative;
+	top: -20px;
+	width: 330px;
+	background-color: #b2c878;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	font: 1.2em 'titillium web', helvetica, arial, sans-serif;
+	font-weight: 200;
+	padding: 6px 0;
+}
+
 
 
 /*=======================================================================================================
@@ -425,3 +732,200 @@ section.contribution_auteur ul:nth-child(2) figcaption{
     left: -19%;
     top: -5%;
 }
+
+/*__________________TOGGLE CONNEXION_____________________*/
+
+
+   /* ---------- FONTAWESOME ---------- */
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+   /* ---------- GENERAL ---------- */
+
+
+input {
+ border: none;
+ font-family: 'Open Sans', Arial, sans-serif;
+ font-size: 14px;
+ line-height: 1.5em;
+ padding: 0;
+ -webkit-appearance: none;
+}
+
+
+
+.clearfix { *zoom: 1; } /* For IE 6/7 */
+.clearfix:before, .clearfix:after {
+ display: table;
+ content: "";
+}
+.clearfix:after { clear: both; }
+
+   /* ---------- LOGIN ---------- */
+
+#login {
+ margin: 50px auto;
+ width: 170px;
+ background-color: #fff;
+ padding: 30px 30px 10px 30px;
+ position: fixed;
+ right: 0;
+ top: 30px;
+}
+
+
+
+
+#login form span {
+ background-color: #363b41;
+ border-radius: 3px 0px 0px 3px;
+ color: #606468;
+ display: block;
+ float: left;
+ height: 50px;
+ line-height: 50px;
+ text-align: center;
+ width: 50px;
+}
+
+#login form input {
+ height: 50px;
+}
+
+#login form input[type="text"], input[type="password"] {
+ background-color: #3b4148;
+ border-radius: 0px 3px 3px 0px;
+ color: #606468;
+ margin-bottom: 1em;
+ padding: 0 16px;
+ width: 80px;
+}
+
+#login form input[type="submit"] {
+ border-radius: 3px;
+ -moz-border-radius: 3px;
+ -webkit-border-radius: 3px;
+ background-color: #aecc54;
+ color: #eee;
+ font-weight: bold;
+ margin-bottom: 2em;
+ text-transform: uppercase;
+ width: 162px;
+}
+
+#login form input[type="submit"]:hover {
+ background-color: #bed96f;
+}
+
+#login > p {
+ text-align: center;
+ font: 1em "titillium web", helvetica, arial, sans-serif;
+ 
+}
+
+
+
+
+#login p a{
+ display: block;
+ line-height: 80%;
+ margin-bottom: 20px;
+}
+
+
+/*__________________TOGGLE INSCRIPTION_____________________*/
+
+
+   /* ---------- FONTAWESOME ---------- */
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+   /* ---------- GENERAL ---------- */
+
+
+.clearfix { *zoom: 1; } /* For IE 6/7 */
+.clearfix:before, .clearfix:after {
+ display: table;
+ content: "";
+}
+.clearfix:after { clear: both; }
+
+   /* ---------- LOGIN ---------- */
+
+#inscription {
+ margin: 50px auto;
+ width: 170px;
+ background-color: #fff;
+ padding: 30px 30px 10px 30px;
+ position: fixed;
+ right: 0;
+ top: 30px;
+}
+
+
+
+
+#inscription form span {
+ background-color: #363b41;
+ border-radius: 3px 0px 0px 3px;
+ color: #606468;
+ display: block;
+ float: left;
+ height: 50px;
+ line-height: 50px;
+ text-align: center;
+ width: 50px;
+}
+
+#inscription form input {
+ height: 50px;
+}
+
+#inscription form input[type="text"], input[type="password"], input[type="email"] {
+ background-color: #3b4148;
+ border-radius: 0px 3px 3px 0px;
+ color: #606468;
+ margin-bottom: 1em;
+ padding: 0 16px;
+ width: 80px;
+}
+
+
+
+#inscription form input[type="submit"] {
+ border-radius: 3px;
+ -moz-border-radius: 3px;
+ -webkit-border-radius: 3px;
+ background-color: #aecc54;
+ color: #eee;
+ font-weight: bold;
+ margin-bottom: 2em;
+ text-transform: uppercase;
+ width: 162px;
+}
+
+#inscription form input[type="submit"]:hover {
+ background-color: #bed96f;
+}
+
+#inscription > p {
+ text-align: center;
+ font: 1em "titillium web", helvetica, arial, sans-serif;
+ 
+}
+
+
+
+
+#inscription p a{
+ display: block;
+ line-height: 80%;
+ margin-bottom: 20px;
+}
+
+
+	

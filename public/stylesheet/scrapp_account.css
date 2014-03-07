@@ -1,0 +1,466 @@
+/* =========================================================================================================
+                                                    @RESET CSS
+===========================================================================================================*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@font-face {
+font-family: 'bebas neue';
+src: url('BebasNeue.otf');
+}
+
+@font-face {
+font-family: 'intro';
+src: url('Intro.otf');
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+/* =========================================================================================================
+            										@GeneralGroup
+===========================================================================================================*/
+html,body {
+    text-decoration: none;
+color: #000;
+font: 1em "titillium web", helvetica, arial, sans-serif;
+font-weight: 200;
+}
+h3{
+  text-decoration: none;
+color: #000;
+font: 1em "titillium web", helvetica, arial, sans-serif;
+font-weight: 200;
+}
+a,a:visited {
+    text-decoration: none;
+color: #000;
+font: 1em "titillium web", helvetica, arial, sans-serif;
+font-weight: 200;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+h1 {
+    margin-top : 1%;
+    margin-left: 10%;
+    height: 67px;
+    width: 140px;
+    position: absolute;
+}
+
+h2 {
+    font-family: Conv_Intro, Arial, sans-serif;
+}
+
+
+/* ======================================================================================================
+           											@MainPageGroup
+========================================================================================================*/
+
+/*---------1.SECTION MENU------------*/
+nav{
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 65px;
+    margin: auto;
+    padding-top: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0, 0.2);
+    z-index: 999;
+    
+    
+}
+
+ul{
+    line-height : 50px;
+}
+
+ul#nav li{
+    display: inline;
+    float: right;
+    margin: 0 2em 0 2em;
+}
+
+ul#nav li a:hover{
+    color: #aecc54;
+}
+
+li a#connect{
+    padding: 1.5em  3em;
+    font-weight: 400;
+    text-decoration: underline;
+
+    border-left: 1px solid rgba(0, 0, 0, .2);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    
+    
+}
+
+li a#connect:hover{
+    text-decoration: none;
+
+}
+
+li a#connect:before{
+    content: url(../images/icon_connexion.png);
+    margin: 0.6em;
+    
+    
+    
+}
+
+nav img{
+float: left;
+margin-left: 50px;
+}
+
+/*-----------2.SECTION INTRO------------*/
+
+section.intro{
+    
+   -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height : 796px;
+    background-repeat: no-repeat;
+}
+
+
+#hand{
+position:absolute;
+top: 250px;
+
+
+
+}
+video{
+height : 331px;
+position: absolute;
+margin-left: 55%;
+margin-top: 19%;
+border: 30px solid #fbfafa;
+-moz-box-shadow: 2px 0px 20px 0px #656565;
+-webkit-box-shadow: 2px 0px 20px 0px #656565;
+-o-box-shadow: 2px 0px 20px 0px #656565;
+box-shadow: 2px 0px 20px 0px #656565;
+
+}
+
+/*-----------3.SECTION MAP & LIST------------*/
+section.h2 {
+    width: 100%;
+    height: 100px; 
+}
+
+h2 {
+    font-size: 24px;
+    padding-top: 6%;
+    text-align: center;
+}
+
+div.roundedimage {
+    background-image: url(../images/ellipses.png);
+    width: 29px;
+    height: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    margin-top : 1%;
+}
+
+#map {
+    background-image: url(../images/map.png);
+	width: 100%;
+    height: 546px;
+}
+
+section#carte ul:nth-child(2) {
+    background-color: #FFF;
+    height: 10%;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.tache li{
+    display : inline-block;
+    width:13%;
+}
+
+section ul.tache figcaption{
+    margin-top : -2%;
+}
+
+section.tache ul:nth-child(2) li {
+    font-size: 14px;
+    padding-right: .5em;
+    padding-left: 1em;
+}
+
+/*---------3.SECTION DERNIERES CONTRIBUTIONS------------*/
+section.contrib:nth-child(3) {
+    background-color: #e9e9e9;
+    width: 100%;
+    display: inline-block;
+    height : 620px;
+}
+
+section.contrib ul.contribution li {
+    display: inline-block;
+    padding-left: 1.8%;
+    padding-right: 1.8%;
+    padding-bottom: 2%;
+    width: 294px;
+}
+
+section.contrib ul:nth-child(3) {
+    text-align: center;
+    padding-top: 3%;
+}
+
+section.contrib ul:nth-child(3) li {
+    display: inline-block;
+}
+section.contrib ul:nth-child(3) figcaption {
+    text-align: left;
+}
+
+.figuredechet {
+max-width: 294px;
+max-height: 235px;
+}
+/*---------4.SECTION NOTRE SERVICE------------*/
+section#concept:nth-child(4) {
+    height: 799px;
+    background-image: url(../images/background.jpg);
+    width: 100%;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+/*display:inline-block;*/
+}
+
+h2.service {
+    color: #FFF;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 37px;
+}
+
+div.roundedimage_bl {
+    background-image: url(../images/ellipses_bl.png);
+    width: 29px;
+    height: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    margin-top : 1%;
+}
+
+section ul.service_pres li {
+    display: inline-block;
+    text-align: center;
+    padding-left: 1%;
+}
+
+section ul.service_pres {
+    padding-left: 4%;
+}
+
+p {
+    color: #FFF;
+    white-space: pre;
+    text-align: center;
+    padding-top: 5%;
+}
+
+
+/*=======================================================================================================
+                                                @MEMBERPAGE
+=========================================================================================================*/
+ 
+/*--------------------1.SECTION PROFIL UTILISATEUR----------------------*/
+section.profil {
+    height: 587px;
+    width : 100%;
+}
+section.profil_perso {
+    background-color: white;
+    width : 50%;
+    float:left;
+}
+section.badge{
+    background-color: white;
+    width : 50%;
+    float: right;
+}
+section.profil h3{
+border-bottom : 1px solid #acacac;
+width : 80%;}
+section.profil h3.edit{
+background-image: url(../images/edit.png);  
+background-repeat : no-repeat;  
+}
+section.profil div.wrapper{
+width: 70%;
+margin-left: 20%;
+}
+ 
+/*------------------1.A SECTION MES INFOS------------------------------*/
+ 
+div.photo{
+    overflow: hidden;
+float: left;
+width: 161px;
+height: 204px;
+margin-top: 3%;
+}
+section.profil ul li{ 
+margin-top: 2%;
+padding-bottom: 1%;
+background-repeat: no-repeat;
+width: 100%;
+padding-left: 40px;
+width: 280px;
+height:27px;
+}
+section.profil_perso ul {
+margin-top: 20px;
+margin-left: 180px;
+position: absolute;
+padding-bottom: 2%;
+}
+ 
+section.profil_perso ul li:nth-child(1)  {background-image :url(../images/logo_connexion.png);}
+section.profil_perso ul li:nth-child(2)  {background-image :url(../images/layer.png);}
+section.profil_perso ul li:nth-child(3)  {background-image :url(../images/adresse.png);}
+section.profil_perso ul li:nth-child(4)  {background-image :url(../images/mail.png);}
+section.profil_perso ul li:nth-child(5)  {background-image :url(../images/tel.png); }
+ 
+ 
+/*-----------------1.B SECTION BADGES UTILISATEURS------------------------------*/
+.liste_badges li{
+    display : inline-block;
+}
+section.badge ul li{
+width : 76px;
+height : 90px;
+background-repeat: no-repeat;
+padding-left : 2%;
+padding-right: 2%;
+display:inline-block;
+}
+section.badge figcaption{
+    text-align: center;
+}
+ 
+/*-------------------2.SECTION DERNIERES CONTRIBUTIONS UTILISATEUR--------------*/
+section.contrib_user {
+    height: 1027px;
+    background-color: #e9e9e9;
+}
+section.contrib_user ul{margin-left: 17%;}
+ 
+section ul.contribution_auteur li {
+    display: inline-block;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    width: 294px;
+}
+ 
+section ul.contribution_auteur figcaption{
+    text-align : left;
+    margin-left: -24%;
+margin-top: 2%;
+}
+ 
+section.contribution_auteur ul:nth-child(2){
+    background-color: #FFF;
+    height: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%; 
+}
+ 
+section.contribution_auteur ul:nth-child(2) figcaption{
+ 
+}
+
+
+/*  CSS map popup*/
+.popup {
+    text-align: center;
+}
+.popup img {
+    width: 100%;
+}
+
+
+.box {
+    width: 294px;
+    height: 235px;
+    overflow: hidden;
+    position: relative;
+}
+.box img {
+    width: 400px;
+    min-height: 235px;
+    position: absolute;
+    left: -19%;
+    top: -5%;
+}

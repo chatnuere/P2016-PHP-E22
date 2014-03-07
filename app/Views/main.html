@@ -5,14 +5,16 @@
 
 	  	<head>
       		<meta charset="utf-8">
-	  		<title> Pierre Bost </title>
+	  		<title> Scrapp </title>
 	  
-    		<link rel="stylesheet" href="css/reset.css"/>  
+    		<link rel="stylesheet" href="public/stylesheet/resetcss.css"/>  
     		<link href="public/stylesheet/scrapp.css" rel="stylesheet" type="text/css" /> 
+    		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+   			<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	
 			<link href='http://fonts.googleapis.com/css?family=Titillium+Web:200,400,700' rel='stylesheet' type='text/css'>
 	
-			<script type="text/javascript" src="scripts/jquery.js"></script>
+			<!-- // <script type="text/javascript" src="scripts/jquery.js"></script> -->
 	   	 	<!-- <script type="text/javascript" src="scripts/localscroll/jquery.localscroll.js"></script> -->
 	    	<!-- <script type="text/javascript" src="scripts/localscroll/jquery.scrollTo.js"></script> -->
 	    	<!--  <script type="text/javascript" src="scripts/lancement.js"></script> -->
@@ -20,36 +22,76 @@
 		<body>
 			
 				<!--MENU -->
-				<nav id="firstNav">
-					<img src="img/logo_scrapp.png" alt="scrapp logo" />
-			        <ul id="nav">
-			            <li><a id="connect" href="signin">Connexion</a></li>
-			            <li><a id="m2" href="#slide2">Contributions</a></li>
-			            <li><a id="m3" href="#slide3">Concept</a></li>
-			            <li><a id="m4"href="#slide1">Carte</a></li>
-			        </ul>
-			  	</nav>
+    <nav id="firstNav">
+     <img src="public/images/logo_scrapp.png" alt="scrapp logo" />
+           <ul id="nav">
+               <li><a id="connect" href="#login">Connexion</a></li>
+               <li><a id="m2" href="#slide2">Contributions</a></li>
+               <li><a id="m3" href="#slide3">Concept</a></li>
+               <li><a id="m4"href="#slide1">Carte</a></li>
+           </ul>
+      </nav>
+
+			  	<div id="login">
+        
+            <form action="javascript:void(0);" method="get">
+            
+                <fieldset class="clearfix">
+                
+                    <p><span class="fontawesome-user"></span><input type="text" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                    <p><span class="fontawesome-lock"></span><input type="password"  value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
+                    <p><input type="submit" id="submit" value="Connexion"></p>
+
+                </fieldset>
+
+            </form>
+        
+            <p>Not a member? <a href="#sign_up" id="sign_up" >Sign up now</a>
+
+     </div> <!-- end login -->
+     
+     <div id="inscription">
+        
+             <form action="javascript:void(0);" method="get">
+            
+                 <fieldset class="clearfix">
+                
+                     <p><span class="fontawesome-user"></span><input type="text" value="Nom" onBlur="if(this.value == '') this.value = 'Nom'" onFocus="if(this.value == 'Nom') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                     <p><span class="fontawesome-user"></span><input type="text" value="Prénom" onBlur="if(this.value == '') this.value = 'Prénom'" onFocus="if(this.value == 'Prénom') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                     <p><span class="fontawesome-user"></span><input type="email" value="email" onBlur="if(this.value == '') this.value = 'email'" onFocus="if(this.value == 'email') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                    <p><span class="fontawesome-user"></span><input type="text" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                     <p><span class="fontawesome-lock"></span><input type="password"  value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
+                     <p><input type="submit" id="signin" value="Inscription"></p>
+
+                 </fieldset>
+
+             </form>
+       
+      </div> <!-- end inscription -->
 				
 		
 				<!--BLOC 1 -->
 				<div id="slide1">
 				
 					<div id="main_left">
-						<img src="img/hand_iphone.png" alt="photo iphone dans la main" />
+						<img src="public/images/hand_iphone.png" alt="photo iphone dans la main" />
 					</div>
 					
 					<div id="teaser_right">
 						<div id="baseline">
 							<h1>Scrapp</h1>
-							 <div id="app_mobile">
-								<p>APP</p>
-								<p>MOBILE</p>
-							</div>
+							 
 						</div>
 						<div id="content">
 							<div>
 								<div id="shadow">
-									<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="476" height="286" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/6_I70KACh4o&amp;hl=fr_FR&amp;fs=1" /><param name="allowfullscreen" value="true" /><embed type="application/x-shockwave-flash" width="476" height="286" src="http://www.youtube.com/v/6_I70KACh4o&amp;hl=fr_FR&amp;fs=1" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+									<object width="476" height="277">
+        <param name="allowfullscreen" value="true" />
+        <param name="allowscriptaccess" value="always" />
+        <param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=88372724&amp;server=vimeo.com&amp;color=00adef&amp;fullscreen=1&amp;title=0&amp;byline=0&amp;loop=1&amp;" />
+        <embed src="http://vimeo.com/moogaloop.swf?clip_id=88372724&amp;server=vimeo.com&amp;color=ffffff&amp;fullscreen=1"
+            type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="WIDTH" height="HEIGHT"></embed>
+    </object>
 								</div>	
 							<a href="#" class="button" id="apple" ><span class="icon"></span><em>Download it from</em>APPLE STORE</a>
 							<a href="#" class="button" id="gplay" ><span class="icon"></span><em>Download it from</em><span id="googleplay">GOOGLE PLAY</span></a>	
@@ -71,15 +113,42 @@
 				
 				<!-- BLOC 2 Afficher la carte ici -->
 				<div id="map">
-					<img src="img/map.png" alt="carte"/>
+					<img src="public/images/map.png" alt="carte"/>
 				</div>
-				<!--BLOC 3 -->
-				<div id="slide3">
-					<h3 class="title">Dernières contributions</h3>
 				
-				</div>
 			  
-			  
+			  <!--BLOC 3 -->
+    <div id="slide3">
+     <h3 class="title">Dernières contributions</h3>
+     
+     <div id="content_contribs">
+      <ul>
+       <li id="contrib1">
+        <img src="public/images/contrib.jpg" alt="contribution1" />
+        <p class="de">De <span>Kirikou</span></p>
+        <p class="dates">Publié le <span>12 janvier 2013</span></p>
+       
+       </li>
+       <li id="contrib2">
+        <img src="public/images/contrib.jpg" alt="contribution2" />
+        <p class="de">De <span>Kirikou</span></p>
+        <p class="dates">Publié le <span>12 janvier 2013</span></p>
+        
+        
+        
+        
+       </li>
+       <li id="contrib3">
+        <img src="public/images/contrib.jpg" alt="contribution3" />
+        <p class="de">De <span>Kirikou</span></p>
+        <p class="dates">Publié le <span>12 janvier 2013</span></p>
+        
+       </li>
+      </ul>
+      
+     </div> 
+
+    </div>
 				<!--BLOC 4 -->
 				<div id="slide4">
 				<h3 class="title">Comment ça fonctionne ?</h3>
@@ -87,7 +156,7 @@
 		            <li>
 						<div class="picto">
 							<p class="nombres" id="n1">1</p>
-							<img src="img/icon_photo.png" alt="etape1" />	
+							<img src="public/images/icon_photo.png" alt="etape1" />	
 						</div>	
 						<p class="titre_etape" id="bg1">Photographiez</p>
 						<p class="phrase_etape">les ordures proches de chez vous</p>
@@ -96,7 +165,7 @@
 		            <li>
 						<div class="picto">
 							<p class="nombres" id="n2">2</p>
-							<img src="img/icon_geoloc.png" alt="etape1" />
+							<img src="public/images/icon_geoloc.png" alt="etape1" />
 						</div>	
 						<p class="titre_etape" id="bg2">Géolocalisez-vous</p>
 						<p class="phrase_etape">en un seul clic</p>
@@ -106,7 +175,7 @@
 		            <li>
 						<div class="picto">
 							<p class="nombres" id="n3">3</p>
-							<img src="img/icon_geoloc.png" alt="etape1" />
+							<img src="public/images/icon_niveau.png" alt="etape1" />
 						</div>	
 						<p class="titre_etape" id="bg3">Indiquez</p>
 						<p class="phrase_etape">le niveau de saleté</p>
@@ -115,7 +184,7 @@
 		            <li>
 						<div class="picto">
 							<p class="nombres" id="n4">4</p>
-							<img src="img/icon_photo.png" alt="etape1" />
+							<img src="public/images/icon_scrapp.png" alt="etape1" />
 						</div>	
 						<p class="titre_etape" id="bg4">C'est nettoyé</p>
 						<p class="phrase_etape">en 24h par nos services dédiés</p>
@@ -126,7 +195,56 @@
 				</div>
 				
 				
-				
+				<script type="text/javascript">
+   $(document).ready(function()
+   {
+    jQuery('#inscription').hide();
+    jQuery('#login').hide();    
+    
+    $('#connect').click(function(){
+    if($('#inscription').is(':visible')) {
+     //alert('Visible');
+     $('#inscription').slideToggle(400);
+     //alert('slideInscris');
+     
+
+    }
+    else {
+     //alert('Caché');
+     //alert('slidelogin');
+     $('#login').slideToggle(400);
+    
+     
+     
+    }
+    }),
+     
+     
+    jQuery('#submit').click(function() {
+      jQuery('#login').slideToggle(400);
+         return false;
+           }),
+     
+    jQuery('#sign_up').click(function() {
+         jQuery('#login').slideToggle(400);
+         jQuery('#inscription').slideToggle(400);
+         return false;
+     }),
+     
+    jQuery('#signin').click(function() {
+      jQuery('#inscription').slideToggle(400);
+      return false;
+      });
+      
+   
+     
+     
+   });
+   
+   
+   
+        </script>
+
 	  	</body>
 	  
 </html>
